@@ -10,7 +10,7 @@ int main() {
 	fgets(usuario, 200, stdin);
 
 	// Lê a senha
-	printf("Insira a sua senha: ");
+	printf("Insira sua senha: ");
 	fgets(senha, 10, stdin);
 
 	// Autentica usuário
