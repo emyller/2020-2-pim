@@ -14,7 +14,7 @@ int main() {
 	fgets(senha, 10, stdin);
 
 	// Autentica usuário
-	printf("Bem vindo, %s!\n", usuario);
+	printf("Bem vindo ao sistema, %s!\n", usuario);
 
 	return 0;
 }
