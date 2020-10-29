@@ -2,7 +2,7 @@
 
 
 int main() {
-	char usuario[200];
+	char usuario[20];
 	char senha[10];
 
 	// Lê usuário da tela
