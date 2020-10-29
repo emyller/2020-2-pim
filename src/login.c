@@ -3,7 +3,7 @@
 
 int main() {
 	char usuario[200];
-	char senha[10];
+	char senha[20];
 
 	// Lê usuário da tela
 	printf("Insira seu usuário: ");
