@@ -1,5 +1,5 @@
-# This file is for unifying the coding style for different editors and IDEs.
-# More information at http://EditorConfig.org
+# Este arquivo padroniza o estilo do código em diferentes editores e IDEs.
+# Mais informações em http://EditorConfig.org
 root = true
 
 [*]
