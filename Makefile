@@ -1,4 +1,7 @@
 all:
+	# Cria diretório de build
+	mkdir -p build
+
 	# Compila todas as libs
 	gcc -c src/lib/entrada.c -o build/lib_entrada.o
 
