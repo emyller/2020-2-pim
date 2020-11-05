@@ -3,6 +3,6 @@
 
 void leia_string(char* pergunta, char* resposta);
 
-// int leia_digito(char pergunta);
+void leia_digito(char* pergunta, int* resposta);
 
 #endif
