@@ -7,7 +7,7 @@ void leia_string(char* pergunta, char* resposta) {
 	/*
 	Lê uma string a partir de uma pergunta feita
 	*/
-	printf(pergunta);  // Exibe pergunta
+	printf(">> %s", pergunta);  // Exibe pergunta
 	fgets(resposta, 100, stdin);  // Lê resposta
 	resposta[strlen(resposta) - 1] = '\0';  // Remove quebra de linha ao final
 }
