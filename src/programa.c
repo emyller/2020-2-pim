@@ -4,13 +4,21 @@
 #include "telas/login.h"
 
 
-int main() {
+int menu() {
+	/*
+	Exibe menu de opções
+	*/
 	int opcao;
 
-	// Exibe menu de opções
 	puts("1. Login");
 	leia_digito("Insira opção: ", &opcao);
 
+	return opcao;
+}
+
+
+int main() {
+	int opcao = menu();
 	switch (opcao) {
 		case 1:
 			login();
