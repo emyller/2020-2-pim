@@ -13,7 +13,7 @@ int login() {
 	// TODO: Verificar dados
 
 	// Exibe mensagem de boas vindas
-	printf("Bem vindo, %s!", usuario);
+	printf("Bem vindo, %s!\n", usuario);
 
 	return 0;
 }

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 void leia_string(char* pergunta, char* resposta) {
@@ -8,7 +9,7 @@ void leia_string(char* pergunta, char* resposta) {
 	*/
 	printf(pergunta);  // Exibe pergunta
 	fgets(resposta, 100, stdin);  // Lê resposta
-	resposta[sizeof(resposta) - 1] = '\0';  // Remove quebra de linha ao final
+	resposta[strlen(resposta) - 1] = '\0';  // Remove quebra de linha ao final
 }
 
 

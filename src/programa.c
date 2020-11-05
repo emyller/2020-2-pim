@@ -24,6 +24,6 @@ int main() {
 			login();
 			break;
 		default:
-			printf("Opção inválida. Tente novamente.");
+			puts("Opção inválida. Tente novamente.");
 	}
 }
