@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-char* leia_string(char* pergunta, char* resposta) {
+void leia_string(char* pergunta, char* resposta) {
 	/*
 	Lê uma string a partir de uma pergunta feita
 	*/
