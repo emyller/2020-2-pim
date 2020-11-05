@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include "../lib/entrada.h"
+
+
+int login() {
+	char usuario[20];
+	char senha[10];
+
+	// Lê dados do usuário
+	leia_string("Informe o usuário: ", usuario);
+	leia_string("Informe a senha: ", senha);
+
+	// TODO: Verificar dados
+
+	// Exibe mensagem de boas vindas
+	printf("Bem vindo, %s!", usuario);
+
+	return 0;
+}
