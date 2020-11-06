@@ -4,7 +4,7 @@
 
 int login() {
 	char usuario[20];
-	char senha[10];
+	char senha[20];
 
 	// Lê dados do usuário
 	leia_string("Informe o usuário: ", usuario);
