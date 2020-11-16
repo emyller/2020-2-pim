@@ -3,6 +3,7 @@
 #include "lib/entrada.h"
 
 #include "telas/login.h"
+#include "telas/elogios_reclamacoes.h"
 
 
 int menu() {
@@ -12,6 +13,7 @@ int menu() {
 	int opcao;
 
 	puts("1. Login");
+	puts("2. Elogios e reclamações");
 	leia_digito("Insira opção: ", &opcao);
 
 	return opcao;
@@ -26,6 +28,9 @@ int main() {
 	switch (opcao) {
 		case 1:
 			login();
+			break;
+		case 2:
+			elogios_reclamacoes();
 			break;
 		default:
 			puts("Opção inválida. Tente novamente.");
