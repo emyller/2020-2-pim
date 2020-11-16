@@ -21,10 +21,10 @@ int elogios_reclamacoes() {
 
 		// Lê nome do médico
 		leia_string("Nome do(a) médico(a): ", nome_medico);
-
-		// Lê elogio ou reclamação
-		leia_string("Elogio ou reclamação: ", elogio_reclamacao);
 	}
+
+	// Lê elogio ou reclamação
+	leia_string("Elogio ou reclamação: ", elogio_reclamacao);
 
 	return 0;
 }
