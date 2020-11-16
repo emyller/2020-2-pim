@@ -7,6 +7,7 @@ all:
 
 	# Compila todas as telas
 	gcc -c src/telas/login.c -o build/tela_login.o
+	gcc -c src/telas/elogios_reclamacoes.c -o build/elogios_reclamacoes.o
 
 	# Compila menu
 	gcc -c src/programa.c -o build/programa.o
