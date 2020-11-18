@@ -15,7 +15,7 @@ int menu() {
 
 	puts("1. Login");
 	puts("2. Elogios e reclamações");
-	puts("3. Agendamento de Consulta");
+	puts("3. Agendamento de consulta");
 	leia_digito("Insira opção: ", &opcao);
 
 	return opcao;
