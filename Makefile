@@ -9,6 +9,7 @@ all:
 	gcc -c src/telas/login.c -o build/tela_login.o
 	gcc -c src/telas/elogios_reclamacoes.c -o build/elogios_reclamacoes.o
 	gcc -c src/telas/agendamento_consulta.c -o build/agendamento_consulta.o
+	gcc -c src/telas/cancelamento_consulta.c -o build/cancelamento_consulta.o
 
 	# Compila menu
 	gcc -c src/programa.c -o build/programa.o
