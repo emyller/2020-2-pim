@@ -10,18 +10,18 @@ int agendamento_consulta() {
     char nome_medico[100]; //qual o nome do médico responsável pelo atendimento
     char data[10]; //data da consulta agendada
     char hora[6]; //hora da consulta agendada
-    int opcoes; 
+    int opcao; 
 
 
-    printf("Agendamento de Consulta\n\n\n");
+    puts("Agendamento de Consulta\n");
 
-    leia_digito("O paciente possue cadastro? ", &opcoes);
+    leia_digito("O paciente possui cadastro?\n 1. Sim \n 2. Não\n\n ", &opcao);
 
-    if (opcoes == 1) { //caso o paciente já tenha cadastro o usuário digitará o número 1 para realizar o agendamento da consulta
+    if (opcao == 1) { //caso o paciente já tenha cadastro o usuário digitará o número 1 para realizar o agendamento da consulta
 
         leia_string("Digite o nome do paciente: ", nome_paciente);
 
-        leia_string("Qual a especialidade méfica? ", especialidade_medica);
+        leia_string("Qual a especialidade médica? ", especialidade_medica);
 
         leia_string("Qual o nome do médico?: ", nome_medico);
 
@@ -35,8 +35,8 @@ int agendamento_consulta() {
         printf("Consulta agendada com sucesso!\n\n");
     }
     
-    else if (opcoes == 2) { //caso o paciente não tenha cadastro o usuário digitará o número 2 para que seja trasferido para realização do cadastro do paciente
-        printf("Faça o cadastro do paciente\n");
+    else if (opcao == 2) { //caso o paciente não tenha cadastro o usuário digitará o número 2 para que seja trasferido para realização do cadastro do paciente
+        puts("Faça o cadastro do paciente");
     }
     else {
         return 1;
