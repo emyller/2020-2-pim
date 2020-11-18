@@ -4,6 +4,7 @@
 
 #include "telas/login.h"
 #include "telas/elogios_reclamacoes.h"
+#include "telas/agendamento_consulta.h"
 
 
 int menu() {
@@ -14,6 +15,7 @@ int menu() {
 
 	puts("1. Login");
 	puts("2. Elogios e reclamações");
+	puts("3. Agendamento de Consulta");
 	leia_digito("Insira opção: ", &opcao);
 
 	return opcao;
@@ -31,6 +33,9 @@ int main() {
 			break;
 		case 2:
 			elogios_reclamacoes();
+			break;
+		case 3:
+			agendamento_consulta();
 			break;
 		default:
 			puts("Opção inválida. Tente novamente.");
