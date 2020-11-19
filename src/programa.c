@@ -6,6 +6,7 @@
 #include "telas/elogios_reclamacoes.h"
 #include "telas/agendamento_consulta.h"
 #include "telas/cancelamento_consulta.h"
+#include "telas/cadastro_medico.h"
 
 
 int menu() {
@@ -18,6 +19,7 @@ int menu() {
 	puts("2. Elogios e reclamações");
 	puts("3. Agendamento de consulta");
 	puts("4. Cancelamento de consulta");
+	puts("5. Cadastro de médicos");
 	leia_digito("Insira opção: ", &opcao);
 
 	return opcao;
@@ -41,6 +43,9 @@ int main() {
 			break;
 		case 4:
 			cancelamento_consulta();
+			break;
+		case 5:
+			cadastro_medico();
 			break;
 		default:
 			puts("Opção inválida. Tente novamente.");
