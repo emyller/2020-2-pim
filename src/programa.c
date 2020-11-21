@@ -23,7 +23,7 @@ int menu() {
 	puts("4. Cancelamento de consulta");
 	puts("5. Cadastro de médicos");
 	puts("6. Cadastro de funcionário");
-	puts("7. Cadastro de Pacientes");
+	puts("7. Cadastro de paciente");
 	leia_digito("Insira opção: ", &opcao);
 
 	return opcao;

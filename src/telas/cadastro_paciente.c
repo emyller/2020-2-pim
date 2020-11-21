@@ -14,7 +14,7 @@ int cadastro_paciente()  {
 	char data_nascimento[20]; // Data de Nascimento do cliente.
 	char plano_saude[50]; // Plano de saude do cliente.
 	int resposta; // RESPOSTA para o comando "do while" em confirmações se os dados estão corretos ou não.
-	int casos;
+	int metodo_consulta;
 
 	puts("--  Cadastro de pacientes. --");
 
@@ -22,13 +22,13 @@ int cadastro_paciente()  {
 
 	do {
 		leia_string("Digite o RG do paciente: ", rg);
-		leia_digito("CPF digitado corretamente? [0/1] ", &resposta);
+		leia_digito("CPF digitado corretamente? 1.Sim - 2.Não ", &resposta);
 	}
 	while (resposta == 0);
 
 	do {
 		leia_string("Digite o CPF do paciente: ", cpf);
-		leia_digito("RG digitado corretamente? [0/1] ", &resposta);
+		leia_digito("RG digitado corretamente? 1.Sim - 2.Não ", &resposta);
 	}
 	while (resposta == 0);
 
@@ -37,15 +37,16 @@ int cadastro_paciente()  {
 		leia_string("Insira a data de nascimento: ", data_nascimento);
 		leia_string("Insira o CEP: ", cep);
 		leia_string("Insira o endereço: ", endereco);
-		leia_digito("Cliente possui plano de saude? [0/1] ", &casos);
-			if (casos == 1) {
-				leia_string("Digite o plano de saude do paciente", plano_saude);
-			}
-			else {
-				puts("Cliente em consulta particular");
-			}
-			
-		leia_digito("Todos os dados foram preenchidos corretamente: [0/1]", &resposta);
+		leia_digito("Cliente possui plano de saude? 1.Sim - 2.Não ", &metodo_consulta);
+
+		if (metodo_consulta == 1) {
+			leia_string("Digite o plano de saude do paciente", plano_saude);
+		}
+		else {
+			puts("Cliente em consulta particular");
+		}
+
+		leia_digito("Todos os dados foram preenchidos corretamente: 1.Sim - 2.Não", &resposta);
 	}
 	while (resposta == 0);
-}	
+}
