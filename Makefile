@@ -12,7 +12,8 @@ all:
 	gcc -c src/telas/cancelamento_consulta.c -o build/cancelamento_consulta.o
 	gcc -c src/telas/cadastro_medico.c -o build/cadastro_medico.o
 	gcc -c src/telas/cadastro_funcionario.c -o build/cadastro_funcionario.o
-
+	gcc -c src/telas/cadastro_paciente.c -o build/cadastro_paciente.o
+	
 	# Compila menu
 	gcc -c src/programa.c -o build/programa.o
 
