@@ -1,4 +1,6 @@
+#include <stdio.h>
 #include "../lib/entrada.h"
+#include "../lib/arquivos.h"
 
 
 int elogios_reclamacoes() {
@@ -25,6 +27,14 @@ int elogios_reclamacoes() {
 
 	// Lê elogio ou reclamação
 	leia_string("Elogio ou reclamação: ", elogio_reclamacao);
+
+	// Insere resultados no arquivo CSV
+	char linha[1000];  // 1 kB
+	sprintf(
+		linha, "%s,%s,%s,%s",
+		nome, unidade_atendimento, nome_medico, elogio_reclamacao
+	);
+	escreve_arquivo("elogios_reclamacoes.txt", linha);
 
 	return 0;
 }
