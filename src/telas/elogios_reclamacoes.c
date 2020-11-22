@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "../lib/entrada.h"
 #include "../lib/arquivos.h"
+#include "../lib/entrada.h"
 
 #define ELOGIOS_RECLAMACOES_ARQUIVO "elogios_reclamacoes.txt"
 
@@ -32,7 +32,7 @@ int elogios_reclamacoes() {
 
 	// Insere resultados no arquivo CSV
 	escreve_linha_csv(
-		ELOGIOS_RECLAMACOES_CSV, 4,
+		ELOGIOS_RECLAMACOES_ARQUIVO, 4,
 		nome, unidade_atendimento, nome_medico, elogio_reclamacao
 	);
 

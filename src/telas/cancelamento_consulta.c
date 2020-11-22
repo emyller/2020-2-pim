@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+
+#define CANCELAMENTO_CONSULTA_ARQUIVO "cancelamento_consulta.txt"
+
 
 int cancelamento_consulta() {
 
-    char nome_paciente[100]; //nome do paciente
-    char data[10]; //data da consulta
-    char hora[6]; //horário da consulta
+    char nome_paciente[100] = ""; //nome do paciente
+    char data[10] = ""; //data da consulta
+    char hora[6] = ""; //horário da consulta
     int opcao;
 
 
@@ -32,6 +36,13 @@ int cancelamento_consulta() {
     else {
         return 1;
     }
+
+		// Insere resultados no arquivo CSV
+		escreve_linha_csv(
+			CANCELAMENTO_CONSULTA_ARQUIVO, 3,
+			nome_paciente, data, hora
+		);
+
 return 0;
 
 }

@@ -1,21 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+
+#define CADASTRO_MEDICO_ARQUIVO "cadastro_medico.txt"
 
 
 int cadastro_medico() {
 
-    char nome_medico[100]; //nome do médico
-    char especialidade[100]; //especialidade médica
-    char cep[8]; //número do CEP residencial
-    char endereco[200]; //endereço da residência
-    char email[100]; //email para contato do médico
-    char rg[9]; //número do RG
-    char cpf[11]; //número do CPF
-    char crm[6]; //númedo do CRM
-    char nascimento[8]; //data de nascimento
-    char telefone[16]; //tefelone para contato
-    
+    char nome_medico[100] = ""; //nome do médico
+    char especialidade[100] = ""; //especialidade médica
+    char cep[8] = ""; //número do CEP residencial
+    char endereco[200] = ""; //endereço da residência
+    char email[100] = ""; //email para contato do médico
+    char rg[9] = ""; //número do RG
+    char cpf[11] = ""; //número do CPF
+    char crm[6] = ""; //númedo do CRM
+    char nascimento[8] = ""; //data de nascimento
+    char telefone[16] = ""; //tefelone para contato
+
 
 
     puts("Cadastro Médico\n\n");
@@ -41,7 +44,13 @@ int cadastro_medico() {
     leia_string("Endereço residencial: ", endereco);
 
     puts("Cadastro efetuado com sucesso!\n\n");
-    
+
+		// Insere resultados no arquivo CSV
+		escreve_linha_csv(
+			CADASTRO_MEDICO_ARQUIVO, 10,
+			nome_medico, especialidade, cep, endereco, email, rg, cpf, crm,
+			nascimento, telefone
+		);
 
     return 0;
  }

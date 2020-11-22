@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+
+#define AGENDAMENTO_CONSULTA_ARQUIVO "agendamento_consulta.txt"
 
 
 int agendamento_consulta() {
 
-    char nome_paciente[100]; //nome do paciente
-    char especialidade_medica[100]; //qual a especialidade médica o paciente precisa
-    char nome_medico[100]; //qual o nome do médico responsável pelo atendimento
-    char data[10]; //data da consulta agendada
-    char hora[6]; //hora da consulta agendada
-    int opcao; 
+    char nome_paciente[100] = ""; //nome do paciente
+    char especialidade_medica[100] = ""; //qual a especialidade médica o paciente precisa
+    char nome_medico[100] = ""; //qual o nome do médico responsável pelo atendimento
+    char data[100] = ""; //data da consulta agendada
+    char hora[100] = ""; //hora da consulta agendada
+    int opcao;
 
 
     puts("Agendamento de Consulta\n");
@@ -33,6 +36,12 @@ int agendamento_consulta() {
         leia_string("Digite a hora da consulta: ", hora); 
 
         printf("Consulta agendada com sucesso!\n\n");
+
+				// Insere resultados no arquivo CSV
+				escreve_linha_csv(
+					AGENDAMENTO_CONSULTA_ARQUIVO, 5,
+					nome_paciente, especialidade_medica, nome_medico, data, hora
+				);
     }
     
     else if (opcao == 2) { //caso o paciente não tenha cadastro o usuário digitará o número 2 para que seja trasferido para realização do cadastro do paciente
