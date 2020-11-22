@@ -4,10 +4,10 @@
 
 
 int elogios_reclamacoes() {
-	char nome[100];
-	char unidade_atendimento[100];
-	char nome_medico[100];
-	char elogio_reclamacao[400];
+	char nome[100] = "";
+	char unidade_atendimento[100] = "";
+	char nome_medico[100] = "";
+	char elogio_reclamacao[400] = "";
 	int ja_passou_consulta;
 
 	// Lê o nome da pessoa
