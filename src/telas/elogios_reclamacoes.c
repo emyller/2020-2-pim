@@ -29,12 +29,10 @@ int elogios_reclamacoes() {
 	leia_string("Elogio ou reclamação: ", elogio_reclamacao);
 
 	// Insere resultados no arquivo CSV
-	char linha[1000];  // 1 kB
-	sprintf(
-		linha, "%s,%s,%s,%s",
+	escreve_linha_csv(
+		"elogios_reclamacoes.txt", 4,
 		nome, unidade_atendimento, nome_medico, elogio_reclamacao
 	);
-	escreve_arquivo("elogios_reclamacoes.txt", linha);
 
 	return 0;
 }
