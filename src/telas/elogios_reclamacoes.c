@@ -2,6 +2,8 @@
 #include "../lib/entrada.h"
 #include "../lib/arquivos.h"
 
+#define ELOGIOS_RECLAMACOES_ARQUIVO "elogios_reclamacoes.txt"
+
 
 int elogios_reclamacoes() {
 	char nome[100] = "";
@@ -30,7 +32,7 @@ int elogios_reclamacoes() {
 
 	// Insere resultados no arquivo CSV
 	escreve_linha_csv(
-		"elogios_reclamacoes.txt", 4,
+		ELOGIOS_RECLAMACOES_CSV, 4,
 		nome, unidade_atendimento, nome_medico, elogio_reclamacao
 	);
 
