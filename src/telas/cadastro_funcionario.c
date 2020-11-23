@@ -9,7 +9,7 @@
 int cadastro_funcionario ()  {
 
 	char nome[100] = "";
-	char sexo[20] = "";
+	char genero[20] = "";
 	char data_nascimento[15] = "";
 	char estado_civil[15] = "";
 	char cpf[15] = "";
@@ -34,7 +34,7 @@ int cadastro_funcionario ()  {
 
 	// Dados pessoais
 	leia_resposta("Nome", nome);
-	leia_resposta("Sexo", sexo);
+	leia_resposta("Gênero", genero);
 	leia_resposta_formato("Data de nascimento", "YYYY-MM-DD", data_nascimento);
 	leia_resposta_formato("Estado civil", "S/C/V/D", estado_civil);
 	leia_resposta_formato("CPF", "XXX.XXX.XXX-XX", cpf);
@@ -70,7 +70,7 @@ int cadastro_funcionario ()  {
 	// Insere resultados no arquivo CSV
 	escreve_linha_csv(
 		CADASTRO_FUNCIONARIO_ARQUIVO, 19,
-		nome, sexo, data_nascimento, estado_civil, cpf, rg, inss, telefone_celular,
+		nome, genero, data_nascimento, estado_civil, cpf, rg, inss, telefone_celular,
 		telefone_residencial, e_mail, nome_cracha, especialidade_cracha, formacao,
 		faculdade, curso, ano_conclusao, endereco, complemento, cep
 	);
