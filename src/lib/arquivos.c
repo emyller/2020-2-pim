@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <string.h>
+#include "./arquivos.h"
 
 
 void escreve_arquivo(char* caminho, char* conteudo) {
@@ -25,12 +26,15 @@ void escreve_linha_csv(char* caminho, int quantidade, ...) {
 	compor a linha de texto. Atenção ao tamanho máximo do buffer!
 	*/
 	va_list valores;  // Argumentos da função
-	char linha[1024] = "";  // Buffer da linha (1024 bytes)
+	char valor[1024] = ""; // Buffer para valores (máximo 1024 bytes)
+	char linha[4096] = "";  // Buffer da linha (máximo 4096 bytes)
 
 	va_start(valores, quantidade);
 	for (int i = 0; i < quantidade; i++) {
 		// Insere valor na linha
-		strcat(linha, va_arg(valores, char*));
+		strcpy(valor, va_arg(valores, char*));
+		substitui_texto(valor, ",", " ");  // Previne conflito com vírgulas do CSV
+		strcat(linha, valor);
 
 		// Insere separador (vírgula) até antes do último valor
 		if (i < (quantidade - 1)) { strcat(linha, ","); }
