@@ -7,7 +7,6 @@
 
 
 int cadastro_paciente()  {
-
 	char nome[200] = "";
 	char rg[10] = "";
 	char cpf[12] = "";

@@ -7,7 +7,6 @@
 
 
 int cadastro_funcionario ()  {
-
 	char nome[100] = "";
 	char genero[20] = "";
 	char data_nascimento[15] = "";
