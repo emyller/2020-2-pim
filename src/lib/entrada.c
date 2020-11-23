@@ -36,6 +36,16 @@ void leia_resposta_formato(char* pergunta, char* formato, char* resposta) {
 }
 
 
+int leia_decisao(char* pergunta) {
+	/*
+	Lê uma decisão (booleano) a partir de uma pergunta feita
+	*/
+	char resposta_str[2];
+	leia_resposta_formato(pergunta, "s/n", resposta_str);
+	return (strcmp(resposta_str, "s") == 0);
+}
+
+
 void leia_digito(char* pergunta, int* resposta) {
 	/*
 	Lê um dígito a partir de uma pergunta feita
