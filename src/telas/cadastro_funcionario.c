@@ -1,29 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+
+#define CADASTRO_FUNCIONARIO_ARQUIVO "cadastro_funcionario.txt"
 
 
 int cadastro_funcionario ()  {
 
-	char nome[100];
-	char sexo[20];
-	char data_nascimento[15];
-	char estado_civil[15];
-	char cpf[15];
-	char rg[15];
-	char inss[15];
-	char telefone_celular[15];
-	char telefone_residencial[15];
-	char e_mail[100];
-	char nome_cracha[20];
-	char especialidade_cracha[50];
-	char formacao[100];
-	char faculdade[100];
-	char curso[100];
-	char ano_conclusao[50];
-	char endereco[300];
-	char complemento[50];
-	char cep[20];
+	char nome[100] = "";
+	char sexo[20] = "";
+	char data_nascimento[15] = "";
+	char estado_civil[15] = "";
+	char cpf[15] = "";
+	char rg[15] = "";
+	char inss[15] = "";
+	char telefone_celular[15] = "";
+	char telefone_residencial[15] = "";
+	char e_mail[100] = "";
+	char nome_cracha[20] = "";
+	char especialidade_cracha[50] = "";
+	char formacao[100] = "";
+	char faculdade[100] = "";
+	char curso[100] = "";
+	char ano_conclusao[50] = "";
+	char endereco[300] = "";
+	char complemento[50] = "";
+	char cep[20] = "";
 	int ensino_superior;
 	int resposta;
 
@@ -65,4 +68,12 @@ int cadastro_funcionario ()  {
 		leia_digito("Dados preenchidos corretamente? [0/1] ", &resposta);
 	}
 	while (resposta == 0);
+
+	// Insere resultados no arquivo CSV
+	escreve_linha_csv(
+		CADASTRO_FUNCIONARIO_ARQUIVO, 19,
+		nome, sexo, data_nascimento, estado_civil, cpf, rg, inss, telefone_celular,
+		telefone_residencial, e_mail, nome_cracha, especialidade_cracha, formacao,
+		faculdade, curso, ano_conclusao, endereco, complemento, cep
+	);
 }

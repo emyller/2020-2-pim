@@ -4,6 +4,7 @@ all:
 
 	# Compila todas as libs
 	gcc -c src/lib/entrada.c -o build/lib_entrada.o
+	gcc -c src/lib/arquivos.c -o build/lib_arquivos.o
 
 	# Compila todas as telas
 	gcc -c src/telas/login.c -o build/tela_login.o

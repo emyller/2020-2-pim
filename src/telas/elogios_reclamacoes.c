@@ -1,11 +1,15 @@
+#include <stdio.h>
+#include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+
+#define ELOGIOS_RECLAMACOES_ARQUIVO "elogios_reclamacoes.txt"
 
 
 int elogios_reclamacoes() {
-	char nome[100];
-	char unidade_atendimento[100];
-	char nome_medico[100];
-	char elogio_reclamacao[400];
+	char nome[100] = "";
+	char unidade_atendimento[100] = "";
+	char nome_medico[100] = "";
+	char elogio_reclamacao[400] = "";
 	int ja_passou_consulta;
 
 	// Lê o nome da pessoa
@@ -25,6 +29,12 @@ int elogios_reclamacoes() {
 
 	// Lê elogio ou reclamação
 	leia_string("Elogio ou reclamação: ", elogio_reclamacao);
+
+	// Insere resultados no arquivo CSV
+	escreve_linha_csv(
+		ELOGIOS_RECLAMACOES_ARQUIVO, 4,
+		nome, unidade_atendimento, nome_medico, elogio_reclamacao
+	);
 
 	return 0;
 }
