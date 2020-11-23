@@ -18,7 +18,7 @@ int cadastro_funcionario ()  {
 	char telefone_residencial[15] = "";
 	char email[100] = "";
 	char nome_cracha[20] = "";
-	char especialidade_cracha[50] = "";
+	char cargo[50] = "";
 	char formacao[100] = "";
 	char faculdade[100] = "";
 	char curso[100] = "";
@@ -33,6 +33,7 @@ int cadastro_funcionario ()  {
 
 	// Dados pessoais
 	leia_resposta("Nome", nome);
+	leia_resposta("Cargo", cargo);
 	leia_resposta("Gênero", genero);
 	leia_resposta_formato("Data de nascimento", "YYYY-MM-DD", data_nascimento);
 	leia_resposta_formato("Estado civil", "S/C/V/D", estado_civil);
@@ -42,7 +43,6 @@ int cadastro_funcionario ()  {
 	leia_resposta_formato("Celular", "XX XXXXX-XXXX", telefone_celular);
 	leia_resposta("Email", email);
 	leia_resposta("Nome no crachá", nome_cracha);
-	leia_resposta("Cargo no crachá", especialidade_cracha);
 	leia_decisao("Ensino superior", &ensino_superior);
 
 	// Formação
@@ -70,7 +70,7 @@ int cadastro_funcionario ()  {
 	escreve_linha_csv(
 		CADASTRO_FUNCIONARIO_ARQUIVO, 19,
 		nome, genero, data_nascimento, estado_civil, cpf, rg, inss, telefone_celular,
-		telefone_residencial, email, nome_cracha, especialidade_cracha, formacao,
+		telefone_residencial, email, nome_cracha, cargo, formacao,
 		faculdade, curso, ano_conclusao, endereco, complemento, cep
 	);
 }
