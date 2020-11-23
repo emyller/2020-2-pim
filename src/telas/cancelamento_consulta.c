@@ -8,8 +8,8 @@
 
 int cancelamento_consulta() {
 	char nome_paciente[100] = "";
-	char data[10] = "";
-	char hora[6] = "";
+	char data[100] = "";
+	char hora[100] = "";
 	int remarcar_consulta;
 
 	puts("Cancelamento de Consulta");

@@ -3,8 +3,8 @@
 
 
 int login() {
-	char usuario[20];
-	char senha[20];
+	char usuario[100];
+	char senha[100];
 
 	// Lê dados do usuário
 	leia_resposta("Usuário", usuario);

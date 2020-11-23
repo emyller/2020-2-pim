@@ -7,14 +7,14 @@
 
 
 int cadastro_paciente()  {
-	char nome[200] = "";
-	char rg[10] = "";
-	char cpf[12] = "";
-	char numero_contato[12] = "";
-	char cep[11] = "";
-	char endereco[200] = "";
-	char data_nascimento[20] = "";
-	char plano_saude[50] = "";
+	char nome[100] = "";
+	char rg[100] = "";
+	char cpf[100] = "";
+	char numero_contato[100] = "";
+	char cep[100] = "";
+	char endereco[100] = "";
+	char data_nascimento[100] = "";
+	char plano_saude[100] = "";
 	int dados_corretos;
 	int metodo_consulta;
 

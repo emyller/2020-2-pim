@@ -9,14 +9,14 @@
 int cadastro_medico() {
 	char nome_medico[100] = "";
 	char especialidade[100] = "";
-	char cep[8] = "";
-	char endereco[200] = "";
+	char cep[100] = "";
+	char endereco[100] = "";
 	char email[100] = "";
-	char rg[9] = "";
-	char cpf[11] = "";
-	char crm[6] = "";
-	char nascimento[8] = "";
-	char telefone[16] = "";
+	char rg[100] = "";
+	char cpf[100] = "";
+	char crm[100] = "";
+	char nascimento[100] = "";
+	char telefone[100] = "";
 
 	puts("Cadastro de Médico");
 

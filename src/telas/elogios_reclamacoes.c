@@ -28,7 +28,7 @@ int elogios_reclamacoes() {
 	}
 
 	// Lê elogio ou reclamação
-	leia_resposta("Elogio ou reclamação", elogio_reclamacao);
+	leia_resposta_formato("Elogio ou reclamação", "390 caracteres", elogio_reclamacao);
 
 	// Insere resultados no arquivo CSV
 	escreve_linha_csv(

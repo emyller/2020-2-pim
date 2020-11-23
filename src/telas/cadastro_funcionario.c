@@ -8,18 +8,18 @@
 
 int cadastro_funcionario ()  {
 	char nome[100] = "";
-	char cargo[50] = "";
-	char genero[20] = "";
-	char data_nascimento[15] = "";
-	char estado_civil[15] = "";
-	char cpf[15] = "";
-	char rg[15] = "";
-	char inss[15] = "";
-	char telefone[15] = "";
+	char cargo[100] = "";
+	char genero[100] = "";
+	char data_nascimento[100] = "";
+	char estado_civil[100] = "";
+	char cpf[100] = "";
+	char rg[100] = "";
+	char inss[100] = "";
+	char telefone[100] = "";
 	char email[100] = "";
-	char endereco[300] = "";
-	char complemento[50] = "";
-	char cep[20] = "";
+	char endereco[100] = "";
+	char complemento[100] = "";
+	char cep[100] = "";
 	int dados_corretos;
 
 	puts("Cadastro de Funcionário");
