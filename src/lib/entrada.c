@@ -3,13 +3,36 @@
 #include <string.h>
 
 
-void leia_string(char* pergunta, char* resposta) {
+void _leia_resposta(char* pergunta, char* formato, char* resposta) {
 	/*
-	Lê uma string a partir de uma pergunta feita
+	Função base para leitura de strings
 	*/
-	printf(">> %s", pergunta);  // Exibe pergunta
-	fgets(resposta, 1024, stdin);  // Lê resposta
+	// Exibe pergunta
+	if (formato != NULL) {
+		printf(">> %s [%s]: ", pergunta, formato);  // Com formato definido
+	} else {
+		printf(">> %s: ", pergunta);  // Sem formato definido
+	}
+
+	// Lê resposta do stdin
+	fgets(resposta, 1024, stdin);
 	resposta[strlen(resposta) - 1] = '\0';  // Remove quebra de linha ao final
+}
+
+
+void leia_resposta(char* pergunta, char* resposta) {
+	/*
+	Lê uma string a partir de uma pergunta feita (sem formato definido)
+	*/
+	_leia_resposta(pergunta, NULL, resposta);
+}
+
+
+void leia_resposta_formato(char* pergunta, char* formato, char* resposta) {
+	/*
+	Lê uma string a partir de uma pergunta feita (com formato definido)
+	*/
+	_leia_resposta(pergunta, formato, resposta);
 }
 
 
