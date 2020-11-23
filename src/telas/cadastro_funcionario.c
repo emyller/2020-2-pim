@@ -19,14 +19,9 @@ int cadastro_funcionario ()  {
 	char email[100] = "";
 	char nome_cracha[20] = "";
 	char cargo[50] = "";
-	char formacao[100] = "";
-	char faculdade[100] = "";
-	char curso[100] = "";
-	char ano_conclusao[50] = "";
 	char endereco[300] = "";
 	char complemento[50] = "";
 	char cep[20] = "";
-	int ensino_superior;
 	int dados_corretos;
 
 	puts("Cadastro de Funcionários");
@@ -43,18 +38,6 @@ int cadastro_funcionario ()  {
 	leia_resposta_formato("Celular", "XX XXXXX-XXXX", telefone_celular);
 	leia_resposta("Email", email);
 	leia_resposta("Nome no crachá", nome_cracha);
-	leia_decisao("Ensino superior", &ensino_superior);
-
-	// Formação
-	if (ensino_superior) {
-		do {
-			leia_resposta("Curso", curso);
-			leia_resposta("Faculdade", faculdade);
-			leia_resposta_formato("Ano de conclusão", "YYYY", ano_conclusao);
-			leia_decisao("Dados corretos", &dados_corretos);
-		}
-		while (!dados_corretos);
-	}
 
 	// Endereço
 	do {
@@ -70,7 +53,6 @@ int cadastro_funcionario ()  {
 	escreve_linha_csv(
 		CADASTRO_FUNCIONARIO_ARQUIVO, 19,
 		nome, genero, data_nascimento, estado_civil, cpf, rg, inss, telefone_celular,
-		telefone_residencial, email, nome_cracha, cargo, formacao,
-		faculdade, curso, ano_conclusao, endereco, complemento, cep
+		telefone_residencial, email, nome_cracha, cargo, endereco, complemento, cep
 	);
 }
