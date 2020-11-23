@@ -28,46 +28,44 @@ int cadastro_funcionario ()  {
 	char complemento[50] = "";
 	char cep[20] = "";
 	int ensino_superior;
-	int resposta;
+	int dados_corretos;
 
-	puts("---- Cadastro de Funcion·rios ----");
+	puts("Cadastro de Funcion√°rios");
 
-	// LÍ os dados basicos da pessoa.
-	leia_string("Insira o nome: ", nome);
-	leia_string("Insira o sexo: ", sexo);
-	leia_string("insira a data de nascimento: ", data_nascimento);
-	leia_string("Insira o Estado Civil: ", estado_civil);
-	leia_string("Insira o CPF do funcion·rio: ", cpf);
-	leia_string("Insira o RG do funcion·rio: ", rg);
-	leia_string("Insira o INSS do funcion·rio: ", inss);
-	leia_string("Insira o n˙mero de celular: ", telefone_celular);
-	leia_string("Insira o E-MAIL de contato: ", e_mail);
-	leia_string("Insira o nome que ser· exibido no crach·: ", nome_cracha);
-	leia_string("Insira a especialidade exibida no crach·: ", especialidade_cracha);
-	leia_digito("Possui ensino TÈcnico ou Superior? [0/1]", &ensino_superior);
+	// Dados pessoais
+	leia_resposta("Nome", nome);
+	leia_resposta("Sexo", sexo);
+	leia_resposta_formato("Data de nascimento", "YYYY-MM-DD", data_nascimento);
+	leia_resposta_formato("Estado civil", "S/C/V/D", estado_civil);
+	leia_resposta_formato("CPF", "XXX.XXX.XXX-XX", cpf);
+	leia_resposta_formato("RG", "somente n√∫meros", rg);
+	leia_resposta_formato("INSS", "somente n√∫meros", inss);
+	leia_resposta_formato("Celular", "XX XXXXX-XXXX", telefone_celular);
+	leia_resposta("Email", e_mail);
+	leia_resposta("Nome no crach√°", nome_cracha);
+	leia_resposta("Cargo no crach√°", especialidade_cracha);
+	leia_decisao("Ensino superior", &ensino_superior);
 
-
-	if (ensino_superior == 1) { //LÍ se o funcionario possui ensino superior
+	// Forma√ß√£o
+	if (ensino_superior) {
 		do {
-			puts("-- Dados do ensino tÈcnico / superior. ");
-			leia_string("Curso concluÌdo: ", curso);
-			leia_string("Faculdade de conclus„o: ", faculdade);
-			leia_string("Ano de conclus„o: ", ano_conclusao);
-			leia_digito("Dados preenchidos corretamente? [0/1]", &resposta);
+			leia_resposta("Curso", curso);
+			leia_resposta("Faculdade", faculdade);
+			leia_resposta_formato("Ano de conclus√£o", "YYYY", ano_conclusao);
+			leia_decisao("Dados corretos", &dados_corretos);
 		}
-		while (resposta == 0);
+		while (!dados_corretos);
 	}
 
-
+	// Endere√ßo
 	do {
-		puts("--- EndereÁo e contato ---");
-		leia_string("CEP: ", cep);
-		leia_string("Entre com o endereÁo: ", endereco);
-		leia_string("Complemento: ", complemento);
-		leia_string("Telefone Residencial: ", telefone_residencial);
-		leia_digito("Dados preenchidos corretamente? [0/1] ", &resposta);
+		leia_resposta_formato("CEP", "XXXXX-XXX", cep);
+		leia_resposta("Endere√ßo", endereco);
+		leia_resposta("Complemento", complemento);
+		leia_resposta_formato("Telefone", "XX XXXX-XXXX", telefone_residencial);
+		leia_decisao("Dados corretos", &dados_corretos);
 	}
-	while (resposta == 0);
+	while (!dados_corretos);
 
 	// Insere resultados no arquivo CSV
 	escreve_linha_csv(

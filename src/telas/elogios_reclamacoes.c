@@ -13,22 +13,22 @@ int elogios_reclamacoes() {
 	int ja_passou_consulta;
 
 	// Lê o nome da pessoa
-	leia_string("Insira seu nome: ", nome);
+	leia_resposta("Nome", nome);
 
 	// Lê se já passou por consulta
-	leia_digito("Já passou por consulta? [0/1] ", &ja_passou_consulta);
+	leia_decisao("Passou por consulta", &ja_passou_consulta);
 
 	// Pede dados adicionais se já é paciente
-	if (ja_passou_consulta == 1) {
+	if (ja_passou_consulta) {
 		// Lê unidade de atendimento
-		leia_string("Unidade de atendimento: ", unidade_atendimento);
+		leia_resposta("Unidade de atendimento", unidade_atendimento);
 
 		// Lê nome do médico
-		leia_string("Nome do(a) médico(a): ", nome_medico);
+		leia_resposta("Nome do(a) médico(a)", nome_medico);
 	}
 
 	// Lê elogio ou reclamação
-	leia_string("Elogio ou reclamação: ", elogio_reclamacao);
+	leia_resposta("Elogio ou reclamação", elogio_reclamacao);
 
 	// Insere resultados no arquivo CSV
 	escreve_linha_csv(
