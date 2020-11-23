@@ -36,13 +36,13 @@ void leia_resposta_formato(char* pergunta, char* formato, char* resposta) {
 }
 
 
-int leia_decisao(char* pergunta) {
+void leia_decisao(char* pergunta, int* resposta) {
 	/*
 	Lê uma decisão (booleano) a partir de uma pergunta feita
 	*/
 	char resposta_str[2];
 	leia_resposta_formato(pergunta, "s/n", resposta_str);
-	return (strcmp(resposta_str, "s") == 0);
+	*resposta = (strcmp(resposta_str, "s") == 0);
 }
 
 
