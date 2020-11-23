@@ -40,3 +40,45 @@ void escreve_linha_csv(char* caminho, int quantidade, ...) {
 	// Escreve linha CSV no arquivo de texto
 	escreve_arquivo(caminho, linha);
 }
+
+
+void substitui_texto(char* texto, char* remocao, char* insercao) {
+	/*
+	Substitui um caractere por outro(s) em uma string
+	*/
+	size_t tamanho_texto = strlen(texto);
+	size_t tamanho_remocao = strlen(remocao);
+	size_t tamanho_insercao = strlen(insercao);
+	char resultado[tamanho_texto * tamanho_insercao + 1];
+	char teste_remocao[tamanho_remocao + 1];
+
+	// Percorre todos os caracteres da string
+	for (int i = 0, r = 0; i < tamanho_texto; i++) {
+		// Monta a amostra de teste
+		for (int s = 0; s < tamanho_remocao; s++) {
+			teste_remocao[s] = texto[i + s];  // Copia próximo caractere
+		}
+		teste_remocao[tamanho_remocao] = '\0';  // Sinaliza final da amostra
+
+		// Amostra de teste bate com string de remoção
+		if (strcmp(teste_remocao, remocao) == 0) {
+			// Substitui texto no resultado
+			for (int s = 0; s < tamanho_insercao; s++) {
+				resultado[i + s] = insercao[s];
+			}
+			i = i + tamanho_remocao - 1;  // Pula índice no texto
+			r += tamanho_insercao;  // Incrementa índice do resultado
+		}
+
+		// Amostra de teste não bate
+		else {
+			resultado[r] = texto[i];  // Copia próximo caractere para o resultado
+			r++;  // Incrementa índice do resultado
+		}
+
+		resultado[r] = '\0';  // Sinaliza final do resultado
+	}
+
+	strcpy(texto, resultado);  // Modifica texto original
+	resultado[0] = '\0';  // Esvazia resultado
+}
