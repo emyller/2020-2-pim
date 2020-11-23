@@ -21,13 +21,13 @@ int cadastro_paciente()  {
 	puts("Cadastro de Pacientes");
 
 	leia_resposta("Nome", nome);
-	leia_resposta_formato("CPF", "XXX.XXX.XXX-XX", cpf);
+	leia_resposta_formato("CPF", "xxx.xxx.xxx-xx", cpf);
 	leia_resposta_formato("RG", "somente números", rg);
 
 	do {
-		leia_resposta_formato("Telefone", "XX XXXXX-XXXX", numero_contato);
-		leia_resposta_formato("Data de nascimento", "YYYY-MM-DD", data_nascimento);
-		leia_resposta_formato("CEP", "XXXXX-XXX", cep);
+		leia_resposta_formato("Telefone", "xx xxxxx-xxxx", numero_contato);
+		leia_resposta_formato("Data de nascimento", "yyyy-mm-dd", data_nascimento);
+		leia_resposta_formato("CEP", "xxxxx-xxx", cep);
 		leia_resposta("Endereço", endereco);
 		leia_decisao("Plano de saúde", &metodo_consulta);
 

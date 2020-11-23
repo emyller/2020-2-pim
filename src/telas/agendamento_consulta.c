@@ -28,8 +28,8 @@ int agendamento_consulta() {
 	// TODO: Exibir disponibilidade de médicos e horários
 	leia_resposta("Especialidade médica", especialidade_medica);
 	leia_resposta("Nome do(a) médico(a)", nome_medico);
-	leia_resposta_formato("Data da consulta", "YYYY-MM-DD", data);
-	leia_resposta_formato("Hora da consulta", "HH:MM", hora);
+	leia_resposta_formato("Data da consulta", "yyyy-mm-dd", data);
+	leia_resposta_formato("Hora da consulta", "hh:mm", hora);
 
 	// Insere resultados no arquivo CSV
 	escreve_linha_csv(
