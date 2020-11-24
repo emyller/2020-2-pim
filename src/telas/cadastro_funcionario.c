@@ -27,7 +27,7 @@ int cadastro_funcionario ()  {
 	leia_resposta("Nome", nome);
 	leia_resposta("Cargo", cargo);
 	leia_resposta_formato("Gênero", "m/f/x", genero);
-	leia_resposta_formato("Data de nascimento", "yyyy-mm-dd", data_nascimento);
+	leia_resposta_formato("Data de nascimento", "dd-mm-yyyy", data_nascimento);
 	leia_resposta_formato("Estado civil", "s/c/v/d", estado_civil);
 	leia_resposta_formato("CPF", "xxx.xxx.xxx-xx", cpf);
 	leia_resposta_formato("RG", "somente números", rg);

@@ -26,7 +26,7 @@ int cancelamento_consulta() {
 	// Caso o paciente queira remarcar, é feito um processo de reagendamento
 	if (remarcar_consulta) {
 		// TODO: Chama função de agendamento
-		leia_resposta_formato("Data da consulta", "yyyy-mm-dd", data);
+		leia_resposta_formato("Data da consulta", "dd-mm-yyyy", data);
 		leia_resposta_formato("Hora da consulta", "hh:mm", hora);
 		puts("Consulta reagendada com sucesso!");
 	}

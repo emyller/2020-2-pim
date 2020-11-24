@@ -22,7 +22,7 @@ int cadastro_paciente()  {
 	leia_resposta("Nome", nome);
 	leia_resposta_formato("CPF", "xxx.xxx.xxx-xx", cpf);
 	leia_resposta_formato("RG", "somente números", rg);
-	leia_resposta_formato("Data de nascimento", "yyyy-mm-dd", data_nascimento);
+	leia_resposta_formato("Data de nascimento", "dd-mm-yyyy", data_nascimento);
 
 	// Endereço e contato
 	leia_resposta_formato("Telefone", "xx xxxxx-xxxx", numero_contato);

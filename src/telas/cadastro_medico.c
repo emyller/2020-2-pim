@@ -25,7 +25,7 @@ int cadastro_medico() {
 	leia_resposta_formato("CPF", "xxx.xxx.xxx-xx", cpf);
 	leia_resposta_formato("RG", "somente números", rg);
 	leia_resposta_formato("CRM", "somente números", crm);
-	leia_resposta_formato("Data de nascimento", "yyyy-mm-dd", nascimento);
+	leia_resposta_formato("Data de nascimento", "dd-mm-yyyy", nascimento);
 	leia_resposta("Especialidade médica", especialidade);
 	leia_resposta("Email", email);
 	leia_resposta_formato("Telefone", "xx xxxxx-xxxx", telefone);
