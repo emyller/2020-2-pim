@@ -7,42 +7,34 @@
 
 
 int cancelamento_consulta() {
+	char nome_paciente[100] = "";
+	char data[100] = "";
+	char hora[100] = "";
+	int remarcar_consulta;
 
-    char nome_paciente[100] = ""; //nome do paciente
-    char data[10] = ""; //data da consulta
-    char hora[6] = ""; //horário da consulta
-    int opcao;
+	puts("Cancelamento de Consulta");
 
+	leia_resposta("Nome do paciente", nome_paciente);
+	leia_decisao("Remarcar consulta", &remarcar_consulta);
 
-    puts("Cancelamento de Consulta\n\n");
+	// Insere resultados no arquivo CSV
+	escreve_linha_csv(
+		CANCELAMENTO_CONSULTA_ARQUIVO, 3,
+		nome_paciente, data, hora  // TODO: Usar data e hora da consulta cancelada
+	);
 
-        //para fazer o cancelamento de uma consulta o usuario precisa inserir o nome do paciente para encontrar seu cadastro
-    leia_string("Nome do paciente ", nome_paciente); 
-    
-    leia_digito("O paciente gostaria de remarcar a consulta?\n(1)Sim\n(2)Não\n\n", &opcao);//o usuário pergunta ao paciente se ele deseja remarcar a consulta
-    
-        //caso o paciente queira remarcar, é feito novamente um processo de agendamento
-    if (opcao == 1) { 
-        leia_string("Qual a data da consulta? ", data);
+	// Caso o paciente queira remarcar, é feito um processo de reagendamento
+	if (remarcar_consulta) {
+		// TODO: Chama função de agendamento
+		leia_resposta_formato("Data da consulta", "dd-mm-yyyy", data);
+		leia_resposta_formato("Hora da consulta", "hh:mm", hora);
+		puts("Consulta reagendada com sucesso!");
+	}
 
-        leia_string("Horário da consulta: ", hora);
+	// Caso o paciente não queira remarcar, sua consulta é apenas cancelada
+	else {
+		puts("Consulta cancelada");
+	}
 
-        puts("Consulta agendada com sucesso!");
-    }
-    
-    else if (opcao == 2) { //caso o paciente não queira remarcar, sua consulta é apenas cancelada
-        puts("Consulta cancelada");
-    }
-    else {
-        return 1;
-    }
-
-		// Insere resultados no arquivo CSV
-		escreve_linha_csv(
-			CANCELAMENTO_CONSULTA_ARQUIVO, 3,
-			nome_paciente, data, hora
-		);
-
-return 0;
-
+	return 0;
 }

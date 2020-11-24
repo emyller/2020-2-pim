@@ -3,12 +3,12 @@
 
 
 int login() {
-	char usuario[20];
-	char senha[20];
+	char usuario[100];
+	char senha[100];
 
 	// Lê dados do usuário
-	leia_string("Informe o usuário: ", usuario);
-	leia_string("Informe a senha: ", senha);
+	leia_resposta("Usuário", usuario);
+	leia_resposta("Senha", senha);
 
 	// TODO: Verificar dados
 

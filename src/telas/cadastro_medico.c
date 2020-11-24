@@ -7,50 +7,39 @@
 
 
 int cadastro_medico() {
+	char nome_medico[100] = "";
+	char especialidade[100] = "";
+	char cep[100] = "";
+	char endereco[100] = "";
+	char email[100] = "";
+	char rg[100] = "";
+	char cpf[100] = "";
+	char crm[100] = "";
+	char nascimento[100] = "";
+	char telefone[100] = "";
 
-    char nome_medico[100] = ""; //nome do médico
-    char especialidade[100] = ""; //especialidade médica
-    char cep[8] = ""; //número do CEP residencial
-    char endereco[200] = ""; //endereço da residência
-    char email[100] = ""; //email para contato do médico
-    char rg[9] = ""; //número do RG
-    char cpf[11] = ""; //número do CPF
-    char crm[6] = ""; //númedo do CRM
-    char nascimento[8] = ""; //data de nascimento
-    char telefone[16] = ""; //tefelone para contato
+	puts("Cadastro de Médico");
 
+	// Dados do(a) profissional
+	leia_resposta("Nome", nome_medico);
+	leia_resposta_formato("CPF", "xxx.xxx.xxx-xx", cpf);
+	leia_resposta_formato("RG", "somente números", rg);
+	leia_resposta_formato("CRM", "somente números", crm);
+	leia_resposta_formato("Data de nascimento", "dd-mm-yyyy", nascimento);
+	leia_resposta("Especialidade médica", especialidade);
+	leia_resposta("Email", email);
+	leia_resposta_formato("Telefone", "xx xxxxx-xxxx", telefone);
+	leia_resposta_formato("CEP", "xxxxx-xxx", cep);
+	leia_resposta("Endereço", endereco);
 
+	// Insere resultados no arquivo CSV
+	escreve_linha_csv(
+		CADASTRO_MEDICO_ARQUIVO, 10,
+		nome_medico, especialidade, cep, endereco, email, rg, cpf, crm,
+		nascimento, telefone
+	);
 
-    puts("Cadastro Médico\n\n");
+	puts("Cadastro efetuado com sucesso!");
 
-    leia_string("Digite o nome do médico: ", nome_medico);
-
-    leia_string("Número do RG (somente números): ", rg); 
-
-    leia_string("Número do CPF (somente números): ", cpf);
-
-    leia_string("Insira o CRM: ", crm);
-
-    leia_string("Data de nascimento (formato: XX/XX/XXXX): ", nascimento);
-
-    leia_string("Qual a especialidade médica? ", especialidade);
-
-    leia_string("Email para contato: ", email);
-
-    leia_string("Número para contato (inserir (DDD)+XXXXX-XXXX): ", telefone);
-
-    leia_string("Número do CEP: ", cep);
-
-    leia_string("Endereço residencial: ", endereco);
-
-    puts("Cadastro efetuado com sucesso!\n\n");
-
-		// Insere resultados no arquivo CSV
-		escreve_linha_csv(
-			CADASTRO_MEDICO_ARQUIVO, 10,
-			nome_medico, especialidade, cep, endereco, email, rg, cpf, crm,
-			nascimento, telefone
-		);
-
-    return 0;
- }
+	return 0;
+}
