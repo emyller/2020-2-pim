@@ -20,7 +20,6 @@ int cadastro_funcionario ()  {
 	char endereco[100] = "";
 	char complemento[100] = "";
 	char cep[100] = "";
-	int dados_corretos;
 
 	puts("Cadastro de Funcionário");
 
@@ -37,13 +36,9 @@ int cadastro_funcionario ()  {
 	leia_resposta("Email", email);
 
 	// Endereço
-	do {
-		leia_resposta_formato("CEP", "xxxxx-xxx", cep);
-		leia_resposta("Endereço", endereco);
-		leia_resposta("Complemento", complemento);
-		leia_decisao("Dados corretos", &dados_corretos);
-	}
-	while (!dados_corretos);
+	leia_resposta_formato("CEP", "xxxxx-xxx", cep);
+	leia_resposta("Endereço", endereco);
+	leia_resposta("Complemento", complemento);
 
 	// Insere resultados no arquivo CSV
 	escreve_linha_csv(

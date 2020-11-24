@@ -15,32 +15,20 @@ int cadastro_paciente()  {
 	char endereco[100] = "";
 	char data_nascimento[100] = "";
 	char plano_saude[100] = "";
-	int dados_corretos;
-	int metodo_consulta;
 
 	puts("Cadastro de Pacientes");
 
+	// Dados pessoais
 	leia_resposta("Nome", nome);
 	leia_resposta_formato("CPF", "xxx.xxx.xxx-xx", cpf);
 	leia_resposta_formato("RG", "somente números", rg);
+	leia_resposta_formato("Data de nascimento", "yyyy-mm-dd", data_nascimento);
 
-	do {
-		leia_resposta_formato("Telefone", "xx xxxxx-xxxx", numero_contato);
-		leia_resposta_formato("Data de nascimento", "yyyy-mm-dd", data_nascimento);
-		leia_resposta_formato("CEP", "xxxxx-xxx", cep);
-		leia_resposta("Endereço", endereco);
-		leia_decisao("Plano de saúde", &metodo_consulta);
-
-		if (metodo_consulta) {
-			leia_resposta("Plano de saúde", plano_saude);
-		}
-		else {
-			puts("Cliente em consulta particular");
-		}
-
-		leia_decisao("Dados corretos", &dados_corretos);
-	}
-	while (!dados_corretos);
+	// Endereço e contato
+	leia_resposta_formato("Telefone", "xx xxxxx-xxxx", numero_contato);
+	leia_resposta_formato("CEP", "xxxxx-xxx", cep);
+	leia_resposta("Endereço", endereco);
+	leia_resposta_formato("Plano de saúde", "ou \"particular\"", plano_saude);
 
 	// Insere resultados no arquivo CSV
 	escreve_linha_csv(
