@@ -8,13 +8,13 @@ void escreve_arquivo(char* caminho, char* conteudo) {
 	/*
 	Escreve uma nova linha em um arquivo
 	*/
-	FILE* file_pointer = fopen(caminho, "a");  // Abre arquivo, modo "a"ppend
-	if (file_pointer == NULL) {
+	FILE* ponteiro_arquivo = fopen(caminho, "a");  // Abre arquivo, modo "a"ppend
+	if (ponteiro_arquivo == NULL) {
 		printf("Erro ao abrir arquivo %s", caminho);
 		return;
 	}
-	fprintf(file_pointer, "%s\n", conteudo);  // Escreve conteúdo numa linha nova no arquivo
-	fclose(file_pointer);  // Fecha o ponteiro do arquivo
+	fprintf(ponteiro_arquivo, "%s\n", conteudo);  // Escreve conteúdo numa linha nova no arquivo
+	fclose(ponteiro_arquivo);  // Fecha o ponteiro do arquivo
 }
 
 
