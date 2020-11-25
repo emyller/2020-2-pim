@@ -6,7 +6,7 @@
 
 void escreve_arquivo(char* caminho, char* conteudo) {
 	/*
-	Abre um arquivo no sistema de arquivos (cria se necessário)
+	Escreve uma nova linha em um arquivo
 	*/
 	FILE* file_pointer = fopen(caminho, "a");  // Abre arquivo, modo "a"ppend
 	if (file_pointer == NULL) {
