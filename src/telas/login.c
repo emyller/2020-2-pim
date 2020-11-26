@@ -5,7 +5,7 @@
 #include "../lib/entrada.h"
 
 
-int login() {
+bool login() {
 	char usuario[100];
 	char senha[100];
 
