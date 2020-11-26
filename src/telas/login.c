@@ -9,6 +9,8 @@ bool login() {
 	char usuario[100];
 	char senha[100];
 
+	puts("Login");
+
 	// Lê dados do usuário
 	leia_resposta("Usuário", usuario);
 	leia_resposta("Senha", senha);
