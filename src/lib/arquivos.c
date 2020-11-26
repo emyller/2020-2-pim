@@ -4,6 +4,82 @@
 #include "./arquivos.h"
 
 
+void leia_arquivo(char* caminho, int tamanho_linha, char linhas[][tamanho_linha]) {
+	/*
+	Lê o conteúdo de um arquivo de texto e retorna na memória
+	*/
+	FILE* ponteiro_arquivo = fopen(caminho, "r");  // Abre o arquivo, modo "r"ead
+	if (ponteiro_arquivo == NULL) {
+		printf("Erro ao abrir arquivo %s", caminho);
+		return;
+	}
+
+	// Determina tamanho do arquivo
+	fseek(ponteiro_arquivo, 0, SEEK_END);  // Navega para o final do arquivo
+	size_t tamanho_arquivo = ftell(ponteiro_arquivo);  // Lê a posição do último byte
+	fseek(ponteiro_arquivo, 0, SEEK_SET);  // Navega para o começo do arquivo
+
+	// Faz leitura do arquivo em linhas, caractere por caractere
+	int posicao_linha = 0;
+	int posicao_caractere = 0;
+	char caractere;
+	for (int i = 0; i < tamanho_arquivo; i++) {
+		caractere = fgetc(ponteiro_arquivo);  // Lê próximo caractere
+
+		// Quebra de linha
+		// TODO: Dar suporte a EOF
+		if (caractere == '\n') {
+			linhas[posicao_linha][posicao_caractere] = '\0';  // Finaliza string
+			posicao_linha++;  // Pula para a próxima linha
+			posicao_caractere = 0;  // Reseta posição do caractere
+			continue;  // Pula loop
+		}
+
+		// Insere caractere na linha (até no máximo o seu tamanho)
+		if (posicao_caractere < tamanho_linha - 1) {
+			linhas[posicao_linha][posicao_caractere] = caractere;
+			posicao_caractere++;
+		}
+	}
+
+	// Nulifica ponteiro após última linha
+	linhas[posicao_linha][0] = 0;
+
+	fclose(ponteiro_arquivo);  // Fecha o ponteiro do arquivo
+}
+
+
+void leia_linha_csv(char* linha, int tamanho_valor, char valores[][tamanho_valor]) {
+	/*
+	Lê campos de uma linha CSV
+	*/
+	int posicao_valor = 0;
+	int posicao_caractere = 0;
+	size_t tamanho_linha = strlen(linha);
+
+	for (int i = 0; i < tamanho_linha; i++) {
+		// Encontra separador (vírgula)
+		if (linha[i] == ',') {
+			valores[posicao_valor][posicao_caractere] = '\0';  // Finaliza string
+			posicao_valor++;  // Pula para o próximo valor
+			posicao_caractere = 0;  // Reseta posição do caractere
+			continue;  // Pula loop
+		}
+
+		// Insere caractere no valor (até no máximo o seu tamanho)
+		if (posicao_caractere < tamanho_valor - 1) {
+			valores[posicao_valor][posicao_caractere] = linha[i];
+			posicao_caractere++;
+		}
+
+		// Está no último caractere da linha
+		if (i == tamanho_linha - 1) {
+			valores[posicao_valor][posicao_caractere] = '\0';
+		}
+	}
+}
+
+
 void escreve_arquivo(char* caminho, char* conteudo) {
 	/*
 	Escreve uma nova linha em um arquivo
