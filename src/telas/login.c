@@ -28,6 +28,7 @@ bool login() {
 		if (strcmp(usuario, linha[0]) == 0 && strcmp(senha, linha[1]) == 0) {
 			// Exibe mensagem de boas vindas
 			printf("Bem vindo(a), %s!\n", usuario);
+			exibe_sucesso("Usuário autenticado.");
 			return true;
 		}
 	}

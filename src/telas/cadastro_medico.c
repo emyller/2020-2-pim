@@ -40,7 +40,7 @@ int cadastro_medico() {
 		nascimento, telefone
 	);
 
-	puts("Cadastro efetuado com sucesso!");
+	exibe_sucesso("Médico cadastrado.");
 
 	return 0;
 }

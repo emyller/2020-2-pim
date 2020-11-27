@@ -47,4 +47,6 @@ int cadastro_funcionario ()  {
 		nome, genero, data_nascimento, estado_civil, cpf, rg, inss, telefone, email,
 		cargo, endereco, complemento, cep
 	);
+
+	exibe_sucesso("Funcionário cadastrado.");
 }

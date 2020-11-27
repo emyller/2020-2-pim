@@ -36,4 +36,6 @@ int cadastro_paciente()  {
 		CADASTRO_PACIENTE_ARQUIVO, 8,
 		nome, rg, cpf, numero_contato, cep, endereco, data_nascimento, plano_saude
 	);
+
+	exibe_sucesso("Paciente cadastrado.");
 }

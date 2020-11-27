@@ -39,5 +39,7 @@ int elogios_reclamacoes() {
 		nome, unidade_atendimento, nome_medico, elogio_reclamacao
 	);
 
+	exibe_sucesso("Comentário registrado.");
+
 	return 0;
 }

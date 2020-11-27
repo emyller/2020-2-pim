@@ -38,5 +38,5 @@ int agendamento_consulta() {
 		nome_paciente, especialidade_medica, nome_medico, data, hora
 	);
 
-	puts("Consulta agendada com sucesso!");
+	exibe_sucesso("Consulta agendada.");
 }
