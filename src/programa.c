@@ -60,7 +60,7 @@ bool menu_principal() {
 			menu_relatorios();
 			break;
 		default:
-			puts("Opção inválida.");
+			exibe_erro("Opção inválida.");
 	}
 
 	// Mantém o menu ativo
@@ -93,7 +93,7 @@ void menu_consultas() {
 			cadastro_paciente();
 			break;
 		default:
-			puts("Opção inválida.");
+			exibe_erro("Opção inválida.");
 	}
 }
 
@@ -123,7 +123,7 @@ void menu_recursos_humanos() {
 			cadastro_funcionario();
 			break;
 		default:
-			puts("Opção inválida.");
+			exibe_erro("Opção inválida.");
 	}
 }
 
@@ -161,6 +161,6 @@ void menu_relatorios() {
 			relatorio_cancelamento_consulta();
 			break;
 		default:
-			puts("Opção inválida.");
+			exibe_erro("Opção inválida.");
 	}
 }
