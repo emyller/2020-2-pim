@@ -4,6 +4,7 @@
 #include "lib/entrada.h"
 #include "lib/utils.h"
 
+#include "./programa.h"
 #include "telas/login.h"
 #include "telas/elogios_reclamacoes.h"
 #include "telas/agendamento_consulta.h"
@@ -14,62 +15,127 @@
 #include "telas/relatorios.h"
 
 
-void menu() {
-	/*
-	Exibe menu de opções
-	*/
+void menu_principal() {
 	int opcao;
 
+	// Exibe menu
 	exibe_titulo("Menu principal");
-	puts("2. Elogios e reclamações");
-	puts("3. Agendamento de consulta");
-	puts("4. Cancelamento de consulta");
-	puts("5. Cadastro de médicos");
-	puts("6. Cadastro de funcionário");
-	puts("7. Cadastro de paciente");
-	puts("8. Relatório: Agendamentos de Consulta");
-	puts("9. Relatório: Pacientes Cadastrados");
-	puts("10. Relatório: Elogios e Reclamações");
-	puts("11. Relatório: Totais Diários");
-	puts("12. Relatório: Cancelamento de Consultas");
-	leia_digito("Insira opção: ", &opcao);
+	puts("1. Consultas");
+	puts("2. Recursos Humanos");
+	puts("3. Relatórios");
 
+	// Ativa opção
+	leia_digito("Opção", &opcao);
 	switch (opcao) {
+		case 1:
+			menu_consultas();
+			break;
 		case 2:
-			elogios_reclamacoes();
+			menu_recursos_humanos();
 			break;
 		case 3:
+			menu_relatorios();
+			break;
+		default:
+			puts("Opção inválida.");
+	}
+}
+
+
+void menu_consultas() {
+	int opcao;
+
+	// Exibe menu
+	exibe_titulo("Consultas");
+	puts("0. Voltar");
+	puts("1. Agendamento");
+	puts("2. Cancelamento");
+	puts("3. Cadastro de Paciente");
+
+	// Ativa opção
+	leia_digito("Opção", &opcao);
+	switch (opcao) {
+		case 0:
+			return;
+		case 1:
 			agendamento_consulta();
 			break;
-		case 4:
+		case 2:
 			cancelamento_consulta();
 			break;
-		case 5:
-			cadastro_medico();
-			break;
-		case 6:
-			cadastro_funcionario();
-			break;
-		case 7:
+		case 3:
 			cadastro_paciente();
 			break;
-		case 8:
+		default:
+			puts("Opção inválida.");
+	}
+}
+
+
+void menu_recursos_humanos() {
+	int opcao;
+
+	// Exibe menu
+	exibe_titulo("Recursos Humanos");
+	puts("0. Voltar");
+	puts("1. Elogios e reclamações");
+	puts("2. Cadastro de médicos");
+	puts("3. Cadastro de funcionário");
+
+	// Ativa opção
+	leia_digito("Opção", &opcao);
+	switch (opcao) {
+		case 0:
+			return;
+		case 1:
+			elogios_reclamacoes();
+			break;
+		case 2:
+			cadastro_medico();
+			break;
+		case 3:
+			cadastro_funcionario();
+			break;
+		default:
+			puts("Opção inválida.");
+	}
+}
+
+
+void menu_relatorios() {
+	int opcao;
+
+	// Exibe menu
+	exibe_titulo("Relatórios");
+	puts("0. Voltar");
+	puts("1. Relatório: Agendamentos de Consulta");
+	puts("2. Relatório: Pacientes Cadastrados");
+	puts("3. Relatório: Elogios e Reclamações");
+	puts("4. Relatório: Totais Diários");
+	puts("5. Relatório: Cancelamento de Consultas");
+
+	// Ativa opção
+	leia_digito("Opção", &opcao);
+	switch (opcao) {
+		case 0:
+			return;
+		case 1:
 			relatorio_agendamento_consulta();
 			break;
-		case 9:
+		case 2:
 			relatorio_pacientes_cadastrados();
 			break;
-		case 10:
+		case 3:
 			relatorio_elogios_reclamacoes();
 			break;
-		case 11:
+		case 4:
 			relatorio_totais_diarios();
 			break;
-		case 12:
+		case 5:
 			relatorio_cancelamento_consulta();
 			break;
 		default:
-			puts("Opção inválida. Tente novamente.");
+			puts("Opção inválida.");
 	}
 }
 
@@ -87,6 +153,6 @@ int main() {
 	// Executa o menu continuamente
 	// Ao sair de uma tela, retorna ao menu principal
 	while (true) {
-		menu();
+		menu_principal();
 	}
 }
