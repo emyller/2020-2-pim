@@ -11,7 +11,7 @@
 #include "telas/cadastro_medico.h"
 #include "telas/cadastro_funcionario.h"
 #include "telas/cadastro_paciente.h"
-#include "telas/relatorio_agendamento_consulta.h"
+#include "telas/relatorios.h"
 
 
 void menu() {
