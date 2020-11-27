@@ -19,5 +19,5 @@ all:
 	# Compila menu
 	gcc -c src/programa.c -o build/programa.o
 
-	# Linka objetos em um exexcutável
+	# Linka objetos em um executável
 	gcc build/*.o -o build/programa
