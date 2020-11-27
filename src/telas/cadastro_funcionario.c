@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+#include "../lib/utils.h"
 
 #define CADASTRO_FUNCIONARIO_ARQUIVO "cadastro_funcionario.txt"
 
@@ -21,7 +22,7 @@ int cadastro_funcionario ()  {
 	char complemento[100] = "";
 	char cep[100] = "";
 
-	puts("Cadastro de Funcionário");
+	exibe_titulo("Cadastro de Funcionário");
 
 	// Dados pessoais
 	leia_resposta("Nome", nome);
@@ -46,4 +47,6 @@ int cadastro_funcionario ()  {
 		nome, genero, data_nascimento, estado_civil, cpf, rg, inss, telefone, email,
 		cargo, endereco, complemento, cep
 	);
+
+	exibe_sucesso("Funcionário cadastrado.");
 }

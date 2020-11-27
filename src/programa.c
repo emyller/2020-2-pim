@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "lib/cores.h"
 #include "lib/entrada.h"
+#include "lib/utils.h"
 
 #include "telas/login.h"
 #include "telas/elogios_reclamacoes.h"
@@ -12,12 +13,13 @@
 #include "telas/cadastro_paciente.h"
 
 
-int menu() {
+void menu() {
 	/*
 	Exibe menu de opções
 	*/
 	int opcao;
 
+	exibe_titulo("Menu principal");
 	puts("2. Elogios e reclamações");
 	puts("3. Agendamento de consulta");
 	puts("4. Cancelamento de consulta");
@@ -26,22 +28,6 @@ int menu() {
 	puts("7. Cadastro de paciente");
 	leia_digito("Insira opção: ", &opcao);
 
-	return opcao;
-}
-
-
-int main() {
-	puts(COR_VERDE "\nBem vindo ao programa" COR_NORMAL);
-	puts("Versão 0.0.1\n\n");
-
-	// Obriga login antes de continuar
-	bool logado = false;
-	while (!logado) {
-		logado = login();
-	}
-
-	// Menu do sistema
-	int opcao = menu();
 	switch (opcao) {
 		case 2:
 			elogios_reclamacoes();
@@ -63,5 +49,23 @@ int main() {
 			break;
 		default:
 			puts("Opção inválida. Tente novamente.");
+	}
+}
+
+
+int main() {
+	puts(COR_VERDE "Bem vindo ao programa" COR_NORMAL);
+	puts("Versão 0.0.1");
+
+	// Obriga login antes de continuar
+	bool logado = false;
+	while (!logado) {
+		logado = login();
+	}
+
+	// Executa o menu continuamente
+	// Ao sair de uma tela, retorna ao menu principal
+	while (true) {
+		menu();
 	}
 }

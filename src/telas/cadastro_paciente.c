@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+#include "../lib/utils.h"
 
 #define CADASTRO_PACIENTE_ARQUIVO "cadastro_paciente.txt"
 
@@ -16,7 +17,7 @@ int cadastro_paciente()  {
 	char data_nascimento[100] = "";
 	char plano_saude[100] = "";
 
-	puts("Cadastro de Pacientes");
+	exibe_titulo("Cadastro de Pacientes");
 
 	// Dados pessoais
 	leia_resposta("Nome", nome);
@@ -35,4 +36,6 @@ int cadastro_paciente()  {
 		CADASTRO_PACIENTE_ARQUIVO, 8,
 		nome, rg, cpf, numero_contato, cep, endereco, data_nascimento, plano_saude
 	);
+
+	exibe_sucesso("Paciente cadastrado.");
 }

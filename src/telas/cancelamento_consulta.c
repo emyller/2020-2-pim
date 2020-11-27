@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+#include "../lib/utils.h"
 
 #define CANCELAMENTO_CONSULTA_ARQUIVO "cancelamento_consulta.txt"
 
@@ -12,7 +13,7 @@ int cancelamento_consulta() {
 	char hora[100] = "";
 	int remarcar_consulta;
 
-	puts("Cancelamento de Consulta");
+	exibe_titulo("Cancelamento de Consulta");
 
 	leia_resposta("Nome do paciente", nome_paciente);
 	leia_decisao("Remarcar consulta", &remarcar_consulta);
@@ -28,12 +29,12 @@ int cancelamento_consulta() {
 		// TODO: Chama função de agendamento
 		leia_resposta_formato("Data da consulta", "dd-mm-yyyy", data);
 		leia_resposta_formato("Hora da consulta", "hh:mm", hora);
-		puts("Consulta reagendada com sucesso!");
+		exibe_sucesso("Consulta reagendada.");
 	}
 
 	// Caso o paciente não queira remarcar, sua consulta é apenas cancelada
 	else {
-		puts("Consulta cancelada");
+		exibe_sucesso("Consulta cancelada.");
 	}
 
 	return 0;
