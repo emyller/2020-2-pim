@@ -47,11 +47,11 @@ void relatorio_agendamento_consulta() {
 	leia_arquivo(AGENDAMENTO_CONSULTA_ARQUIVO, 500, linhas);
 
 	// Exibe agendamentos
-	char linha[5][100];
-	puts("Nome\tEspecialidade\tMédico\tData\tHorário");
+	char linha[6][100];
+	puts("Nome\tEspecialidade\tMédico\tData\tHorário\tValor (R$)");
 	for (int i = 0; i < 20; i++) {
 		leia_linha_csv(linhas[i], 100, linha);
-		printf("%s\t%s\t%s\t%s\t%s\n", linha[0], linha[1], linha[2], linha[3], linha[4]);
+		printf("%s\t%s\t%s\t%s\t%s\t%s\n", linha[0], linha[1], linha[2], linha[3], linha[4], linha[5]);
 	}
 
 	exibe_sucesso("Relatório exibido.");
