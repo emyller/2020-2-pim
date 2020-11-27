@@ -3,8 +3,6 @@
 #include "../lib/entrada.h"
 #include "../lib/utils.h"
 
-#define ELOGIOS_RECLAMACOES_ARQUIVO "elogios_reclamacoes.txt"
-
 
 int elogios_reclamacoes() {
 	char nome[100] = "";

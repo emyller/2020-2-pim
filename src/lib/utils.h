@@ -9,4 +9,6 @@ void exibe_erro(char* mensagem);
 
 void espera_enter();
 
+void exibe_separador();
+
 #endif

@@ -5,6 +5,7 @@ all:
 	# Compila todas as libs
 	gcc -c src/lib/entrada.c -o build/lib_entrada.o
 	gcc -c src/lib/arquivos.c -o build/lib_arquivos.o
+	gcc -c src/lib/data_hora.c -o build/lib_data_hora.o
 	gcc -c src/lib/utils.c -o build/lib_utils.o
 
 	# Compila todas as telas
@@ -15,9 +16,10 @@ all:
 	gcc -c src/telas/cadastro_medico.c -o build/cadastro_medico.o
 	gcc -c src/telas/cadastro_funcionario.c -o build/cadastro_funcionario.o
 	gcc -c src/telas/cadastro_paciente.c -o build/cadastro_paciente.o
+	gcc -c src/telas/relatorios.c -o build/relatorios.o
 
 	# Compila menu
 	gcc -c src/programa.c -o build/programa.o
 
-	# Linka objetos em um exexcutável
+	# Linka objetos em um executável
 	gcc build/*.o -o build/programa

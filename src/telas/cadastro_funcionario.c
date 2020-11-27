@@ -4,8 +4,6 @@
 #include "../lib/entrada.h"
 #include "../lib/utils.h"
 
-#define CADASTRO_FUNCIONARIO_ARQUIVO "cadastro_funcionario.txt"
-
 
 int cadastro_funcionario ()  {
 	char nome[100] = "";

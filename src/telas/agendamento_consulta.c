@@ -5,8 +5,6 @@
 #include "../lib/utils.h"
 #include "./cadastro_paciente.h"
 
-#define AGENDAMENTO_CONSULTA_ARQUIVO "agendamento_consulta.txt"
-
 
 int agendamento_consulta() {
 	char nome_paciente[100] = "";

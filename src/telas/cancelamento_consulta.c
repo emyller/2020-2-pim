@@ -6,8 +6,6 @@
 #include "../lib/utils.h"
 #include "./agendamento_consulta.h"
 
-#define CANCELAMENTO_CONSULTA_ARQUIVO "cancelamento_consulta.txt"
-
 
 int cancelamento_consulta() {
 	char nome_paciente[100] = "";
@@ -21,11 +19,11 @@ int cancelamento_consulta() {
 
 	// Lê arquivo de usuários
 	char linhas[100][500];  // Array de linhas
-	leia_arquivo("agendamento_consulta.txt", 500, linhas);
+	int numero_linhas = leia_arquivo("agendamento_consulta.txt", 500, linhas);
 
 	// Tenta encontrar usuário
 	char linha[5][100];  // Array de valores em cada linha
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < numero_linhas; i++) {
 		// Compara usuários com valores das linhas
 		leia_linha_csv(linhas[i], 100, linha);
 		if (strcmp(nome_paciente, linha[0]) == 0) {

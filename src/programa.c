@@ -11,6 +11,7 @@
 #include "telas/cadastro_medico.h"
 #include "telas/cadastro_funcionario.h"
 #include "telas/cadastro_paciente.h"
+#include "telas/relatorios.h"
 
 
 void menu() {
@@ -26,6 +27,8 @@ void menu() {
 	puts("5. Cadastro de médicos");
 	puts("6. Cadastro de funcionário");
 	puts("7. Cadastro de paciente");
+	puts("8. Relatório: Agendamentos de Consulta");
+	puts("9. Relatório: Pacientes Cadastrados");
 	leia_digito("Insira opção: ", &opcao);
 
 	switch (opcao) {
@@ -47,6 +50,11 @@ void menu() {
 		case 7:
 			cadastro_paciente();
 			break;
+		case 8:
+			relatorio_agendamento_consulta();
+			break;
+		case 9:
+			relatorio_pacientes_cadastrados();
 		default:
 			puts("Opção inválida. Tente novamente.");
 	}

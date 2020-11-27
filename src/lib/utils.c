@@ -36,3 +36,11 @@ void espera_enter() {
 	printf("Pressione <Enter> para continuar... ");
 	getchar();
 }
+
+
+void exibe_separador() {
+	/*
+	Exibe separador de conteúdo
+	*/
+	puts("---");
+}

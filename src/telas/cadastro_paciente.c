@@ -4,8 +4,6 @@
 #include "../lib/entrada.h"
 #include "../lib/utils.h"
 
-#define CADASTRO_PACIENTE_ARQUIVO "cadastro_paciente.txt"
-
 
 int cadastro_paciente()  {
 	char nome[100] = "";
