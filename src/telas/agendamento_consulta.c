@@ -14,6 +14,7 @@ int agendamento_consulta() {
 	char nome_medico[100] = "";
 	char data[100] = "";
 	char hora[100] = "";
+	char valor_consulta[100] = "";
 	int ja_possui_cadastro;
 
 	exibe_titulo("Agendamento de Consulta");
@@ -31,11 +32,12 @@ int agendamento_consulta() {
 	leia_resposta("Nome do(a) médico(a)", nome_medico);
 	leia_resposta_formato("Data da consulta", "dd-mm-yyyy", data);
 	leia_resposta_formato("Hora da consulta", "hh:mm", hora);
+	leia_resposta_formato("Valor da consulta", "somente números", valor_consulta);
 
 	// Insere resultados no arquivo CSV
 	escreve_linha_csv(
-		AGENDAMENTO_CONSULTA_ARQUIVO, 5,
-		nome_paciente, especialidade_medica, nome_medico, data, hora
+		AGENDAMENTO_CONSULTA_ARQUIVO, 6,
+		nome_paciente, especialidade_medica, nome_medico, data, hora, valor_consulta
 	);
 
 	exibe_sucesso("Consulta agendada.");
