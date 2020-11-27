@@ -1,7 +1,8 @@
 #ifndef PROGRAMA_H
 #define PROGRAMA_H
+#include <stdbool.h>
 
-void menu_principal();
+bool menu_principal();
 
 void menu_consultas();
 

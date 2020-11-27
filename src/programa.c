@@ -15,11 +15,12 @@
 #include "telas/relatorios.h"
 
 
-void menu_principal() {
+bool menu_principal() {
 	int opcao;
 
 	// Exibe menu
 	exibe_titulo("Menu principal");
+	puts("0. Sair");
 	puts("1. Consultas");
 	puts("2. Recursos Humanos");
 	puts("3. Relatórios");
@@ -27,6 +28,9 @@ void menu_principal() {
 	// Ativa opção
 	leia_digito("Opção", &opcao);
 	switch (opcao) {
+		case 0:
+			// Desativa menu
+			return false;
 		case 1:
 			menu_consultas();
 			break;
@@ -39,6 +43,9 @@ void menu_principal() {
 		default:
 			puts("Opção inválida.");
 	}
+
+	// Mantém o menu ativo
+	return true;
 }
 
 
@@ -152,7 +159,8 @@ int main() {
 
 	// Executa o menu continuamente
 	// Ao sair de uma tela, retorna ao menu principal
-	while (true) {
-		menu_principal();
+	bool menu_ativo = true;
+	while (menu_ativo) {
+		menu_ativo = menu_principal();
 	}
 }
