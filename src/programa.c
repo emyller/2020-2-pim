@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "lib/cores.h"
 #include "lib/entrada.h"
+#include "lib/utils.h"
 
 #include "telas/login.h"
 #include "telas/elogios_reclamacoes.h"
@@ -18,6 +19,7 @@ int menu() {
 	*/
 	int opcao;
 
+	exibe_titulo("Menu principal");
 	puts("2. Elogios e reclamações");
 	puts("3. Agendamento de consulta");
 	puts("4. Cancelamento de consulta");
