@@ -34,6 +34,6 @@ bool login() {
 	}
 
 	// Não achou usuário e senha
-	puts("Usuário ou senha incorretos.");
+	exibe_erro("Usuário ou senha incorretos.");
 	return false;
 }

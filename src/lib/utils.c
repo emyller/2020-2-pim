@@ -18,3 +18,13 @@ void exibe_sucesso(char* mensagem) {
 	printf("(Pressione <Enter> para continuar)");
 	getchar();
 }
+
+
+void exibe_erro(char* mensagem) {
+	/*
+	Exibe mensagem de erro
+	*/
+	printf(COR_VERMELHO "\n%s\n" COR_NORMAL, mensagem);
+	printf("(Pressione <Enter> para continuar)");
+	getchar();
+}

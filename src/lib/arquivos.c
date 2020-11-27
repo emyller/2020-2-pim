@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "./arquivos.h"
+#include "./utils.h"
 
 
 void leia_arquivo(char* caminho, int tamanho_linha, char linhas[][tamanho_linha]) {
@@ -10,7 +11,7 @@ void leia_arquivo(char* caminho, int tamanho_linha, char linhas[][tamanho_linha]
 	*/
 	FILE* ponteiro_arquivo = fopen(caminho, "r");  // Abre o arquivo, modo "r"ead
 	if (ponteiro_arquivo == NULL) {
-		printf("Erro ao abrir arquivo %s", caminho);
+		exibe_erro("Erro ao abrir arquivo.");
 		return;
 	}
 
@@ -86,7 +87,7 @@ void escreve_arquivo(char* caminho, char* conteudo) {
 	*/
 	FILE* ponteiro_arquivo = fopen(caminho, "a");  // Abre arquivo, modo "a"ppend
 	if (ponteiro_arquivo == NULL) {
-		printf("Erro ao abrir arquivo %s", caminho);
+		exibe_erro("Erro ao abrir arquivo.");
 		return;
 	}
 	fprintf(ponteiro_arquivo, "%s\n", conteudo);  // Escreve conteúdo numa linha nova no arquivo
