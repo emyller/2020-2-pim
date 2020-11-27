@@ -41,7 +41,7 @@ int cadastro_funcionario ()  {
 
 	// Insere resultados no arquivo CSV
 	escreve_linha_csv(
-		CADASTRO_FUNCIONARIO_ARQUIVO, 19,
+		CADASTRO_FUNCIONARIO_ARQUIVO, 13,
 		nome, genero, data_nascimento, estado_civil, cpf, rg, inss, telefone, email,
 		cargo, endereco, complemento, cep
 	);
