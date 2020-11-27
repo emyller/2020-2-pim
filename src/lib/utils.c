@@ -15,4 +15,6 @@ void exibe_sucesso(char* mensagem) {
 	Exibe mensagem de sucesso
 	*/
 	printf(COR_VERDE "\n%s\n" COR_NORMAL, mensagem);
+	printf("(Pressione <Enter> para continuar)");
+	getchar();
 }
