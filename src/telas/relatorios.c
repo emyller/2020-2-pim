@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "../lib/arquivos.h"
 #include "../lib/data_hora.h"
+#include "../lib/entrada.h"
 #include "../lib/utils.h"
 
 
@@ -92,6 +93,82 @@ void relatorio_elogios_reclamacoes() {
 			linha[3]
 		);
 	}
+
+	exibe_sucesso("Relatório exibido.");
+}
+
+
+void relatorio_totais_diarios() {
+	const size_t MAX_LINHAS = 100;
+
+	exibe_titulo("Relatório: Totais Diários");
+
+	// Lê datas para filtrar o relatório
+	char data_inicio_str[100];
+	char data_fim_str[100];
+	leia_resposta_formato("Data de início", "dd-mm-yyyy", data_inicio_str);
+	leia_resposta_formato("Data de fim", "dd-mm-yyyy", data_fim_str);
+
+	// Converte entrada em texto para datas
+	Data data_inicio;
+	Data data_fim;
+	string_para_data(data_inicio_str, &data_inicio);
+	string_para_data(data_fim_str, &data_fim);
+
+	// Cabeçalho da tabela
+	puts("Data\tConsultas\tTotal (R$)");
+
+	// Faz um loop em todas as possíveis (e impossíveis) datas entre os anos
+	int quantidade_periodo = 0, valor_periodo = 0;
+	for (int ano = data_inicio.ano; ano <= data_fim.ano; ano++)
+	for (int mes = 1; mes <= 12; mes++)
+	for (int dia = 1; dia <= 31; dia++) {
+		// Pula data se a iteração está antes ou depois do limite
+		if (
+			ano == data_inicio.ano && mes < data_inicio.mes ||
+			ano == data_inicio.ano && mes == data_inicio.mes && dia < data_inicio.dia ||
+			ano == data_fim.ano && mes > data_fim.mes ||
+			ano == data_fim.ano && mes == data_fim.mes && dia > data_fim.dia
+		) continue;
+
+		// Lê arquivo de consultas
+		char linhas[MAX_LINHAS][500];
+		int numero_linhas = leia_arquivo(AGENDAMENTO_CONSULTA_ARQUIVO, 500, linhas);
+
+		// Busca por todas as consultas na data atual
+		int quantidade_dia = 0, valor_dia = 0;
+		for (int i = 0; i < numero_linhas; i++) {
+			char linha[6][100];
+			Data data_linha;
+			leia_linha_csv(linhas[i], 100, linha);
+			string_para_data(linha[3], &data_linha);
+
+			// Pula linha se as datas não batem
+			if (!(
+				ano == data_linha.ano &&
+				mes == data_linha.mes &&
+				dia == data_linha.dia
+			)) continue;
+
+			// Soma valores do dia
+			quantidade_dia++;
+			valor_dia += atoi(linha[5]);
+		}
+
+		// Exibe totais para a data
+		printf(
+			"%02d-%02d-%04d\t%d\t%d\n",
+			dia, mes, ano, quantidade_dia, valor_dia
+		);
+
+		// Soma valores do período
+		quantidade_periodo += quantidade_dia;
+		valor_periodo += valor_dia;
+	}
+
+	// Exibe totais acumulados do período
+	exibe_separador();
+	printf("Total\t%d\t%d", quantidade_periodo, valor_periodo);
 
 	exibe_sucesso("Relatório exibido.");
 }

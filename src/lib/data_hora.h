@@ -9,4 +9,6 @@ typedef struct datas {
 
 void obtem_data_atual(Data *hoje);
 
+void string_para_data(char* data_string, Data *data);
+
 #endif
