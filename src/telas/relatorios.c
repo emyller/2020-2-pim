@@ -166,6 +166,9 @@ void relatorio_totais_diarios() {
 		valor_periodo += valor_dia;
 	}
 
+	// Exibe totais acumulados do período
 	exibe_separador();
 	printf("Total\t%d\t%d", quantidade_periodo, valor_periodo);
+
+	exibe_sucesso("Relatório exibido.");
 }
