@@ -36,8 +36,8 @@ int agendamento_consulta() {
 
 	// Insere resultados no arquivo CSV
 	escreve_linha_csv(
-		AGENDAMENTO_CONSULTA_ARQUIVO, 5,
-		nome_paciente, especialidade_medica, nome_medico, data, hora
+		AGENDAMENTO_CONSULTA_ARQUIVO, 6,
+		nome_paciente, especialidade_medica, nome_medico, data, hora, valor_consulta
 	);
 
 	exibe_sucesso("Consulta agendada.");
