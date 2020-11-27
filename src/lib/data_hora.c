@@ -19,3 +19,17 @@ void obtem_data_atual(Data *hoje) {
 	hoje->mes = agora_calendario->tm_mon + 1;
 	hoje->dia = agora_calendario->tm_mday;
 }
+
+void string_para_data(char* data_string, Data *data) {
+	/*
+	Lê uma data no formato de string e grava numa variável tipo data
+	*/
+	// Lê os números da data para variáveis numéricas
+	int dia, mes, ano;
+	sscanf(data_string, "%d-%d-%d", &dia, &mes, &ano);
+
+	// Escreve os números nos atributos da data
+	data->dia = dia;
+	data->mes = mes;
+	data->ano = ano;
+}
