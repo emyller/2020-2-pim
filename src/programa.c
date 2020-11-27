@@ -15,6 +15,25 @@
 #include "telas/relatorios.h"
 
 
+int main() {
+	puts(COR_VERDE "Bem vindo ao programa" COR_NORMAL);
+	puts("Versão 0.0.1");
+
+	// Obriga login antes de continuar
+	bool logado = false;
+	while (!logado) {
+		logado = login();
+	}
+
+	// Executa o menu continuamente
+	// Ao sair de uma tela, retorna ao menu principal
+	bool menu_ativo = true;
+	while (menu_ativo) {
+		menu_ativo = menu_principal();
+	}
+}
+
+
 bool menu_principal() {
 	int opcao;
 
@@ -143,24 +162,5 @@ void menu_relatorios() {
 			break;
 		default:
 			puts("Opção inválida.");
-	}
-}
-
-
-int main() {
-	puts(COR_VERDE "Bem vindo ao programa" COR_NORMAL);
-	puts("Versão 0.0.1");
-
-	// Obriga login antes de continuar
-	bool logado = false;
-	while (!logado) {
-		logado = login();
-	}
-
-	// Executa o menu continuamente
-	// Ao sair de uma tela, retorna ao menu principal
-	bool menu_ativo = true;
-	while (menu_ativo) {
-		menu_ativo = menu_principal();
 	}
 }
