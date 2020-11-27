@@ -97,11 +97,6 @@ void relatorio_elogios_reclamacoes() {
 }
 
 
-
-
-
-
-
 void relatorio_cancelamento_consulta() {
 	/*
 	Exibe cancelamento de consultas
