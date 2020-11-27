@@ -103,7 +103,7 @@ void relatorio_cancelamento_consulta() {
 	*/
 	const size_t MAX_LINHAS = 100;
 
-	exibe_titulo("Relatório: Cancelamento de consultas");
+	exibe_titulo("Relatório: Cancelamento de Consultas");
 
 	// Lê arquivo de cancelamento de consulta
 	char linhas[MAX_LINHAS][500];
