@@ -15,6 +15,7 @@ int agendamento_consulta() {
 	char data[100] = "";
 	char hora[100] = "";
 	int ja_possui_cadastro;
+	int valor_consulta;
 
 	exibe_titulo("Agendamento de Consulta");
 
@@ -28,6 +29,7 @@ int agendamento_consulta() {
 
 	// TODO: Exibir disponibilidade de médicos e horários
 	leia_resposta("Especialidade médica", especialidade_medica);
+	leia_digito("Valor da consulta:", &valor_consulta);
 	leia_resposta("Nome do(a) médico(a)", nome_medico);
 	leia_resposta_formato("Data da consulta", "dd-mm-yyyy", data);
 	leia_resposta_formato("Hora da consulta", "hh:mm", hora);
