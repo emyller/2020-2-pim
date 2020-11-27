@@ -31,8 +31,8 @@ int menu() {
 
 
 int main() {
-	puts(COR_VERDE "\nBem vindo ao programa" COR_NORMAL);
-	puts("Versão 0.0.1\n\n");
+	puts(COR_VERDE "Bem vindo ao programa" COR_NORMAL);
+	puts("Versão 0.0.1");
 
 	// Obriga login antes de continuar
 	bool logado = false;
