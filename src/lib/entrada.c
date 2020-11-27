@@ -51,8 +51,6 @@ void leia_digito(char* pergunta, int* resposta) {
 	Lê um dígito a partir de uma pergunta feita
 	*/
 	char resposta_str[10];
-
-	printf(pergunta);  // Exibe pergunta
-	fgets(resposta_str, 10, stdin);  // Lê resposta
+	_leia_resposta(pergunta, NULL, resposta_str);
 	*resposta = atoi(resposta_str);
 }
