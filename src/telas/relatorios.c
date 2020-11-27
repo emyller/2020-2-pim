@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "../lib/arquivos.h"
 #include "../lib/data_hora.h"
 #include "../lib/utils.h"
@@ -39,6 +40,7 @@ void relatorio_pacientes_cadastrados() {
 
 void relatorio_agendamento_consulta() {
 	const size_t MAX_LINHAS = 100;
+	int valor_total = 0;
 
 	exibe_titulo("Relatório: Agendamentos de Consulta");
 
@@ -52,7 +54,14 @@ void relatorio_agendamento_consulta() {
 	for (int i = 0; i < numero_linhas; i++) {
 		leia_linha_csv(linhas[i], 100, linha);
 		printf("%s\t%s\t%s\t%s\t%s\t%s\n", linha[0], linha[1], linha[2], linha[3], linha[4], linha[5]);
+
+		// Soma o valor no total
+		valor_total += atoi(linha[5]);
 	}
+
+	// Exibe soma de valores
+	exibe_separador();
+	printf("Valor total: R$ %d\n", valor_total);
 
 	exibe_sucesso("Relatório exibido.");
 }
