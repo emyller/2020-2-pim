@@ -16,6 +16,7 @@ all:
 	gcc -c src/telas/cadastro_medico.c -o build/cadastro_medico.o
 	gcc -c src/telas/cadastro_funcionario.c -o build/cadastro_funcionario.o
 	gcc -c src/telas/cadastro_paciente.c -o build/cadastro_paciente.o
+	gcc -c src/telas/relatorio_agendamento_consulta.c -o build/relatorio_agendamento_consulta.o
 
 	# Compila menu
 	gcc -c src/programa.c -o build/programa.o
