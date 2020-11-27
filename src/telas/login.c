@@ -18,11 +18,11 @@ bool login() {
 
 	// Lê arquivo de usuários
 	char linhas[100][200];  // Array de linhas
-	leia_arquivo(LOGIN_ARQUIVO, 200, linhas);
+	int numero_linhas = leia_arquivo(LOGIN_ARQUIVO, 200, linhas);
 
 	// Tenta encontrar usuário e senha
 	char linha[2][100];  // Array de valores em cada linha
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < numero_linhas; i++) {
 		// Compara usuário e senha com valores das linhas
 		leia_linha_csv(linhas[i], 100, linha);
 		if (strcmp(usuario, linha[0]) == 0 && strcmp(senha, linha[1]) == 0) {

@@ -5,14 +5,14 @@
 #include "./utils.h"
 
 
-void leia_arquivo(char* caminho, int tamanho_linha, char linhas[][tamanho_linha]) {
+int leia_arquivo(char* caminho, int tamanho_linha, char linhas[][tamanho_linha]) {
 	/*
 	Lê o conteúdo de um arquivo de texto e retorna na memória
 	*/
 	FILE* ponteiro_arquivo = fopen(caminho, "r");  // Abre o arquivo, modo "r"ead
 	if (ponteiro_arquivo == NULL) {
 		exibe_erro("Erro ao abrir arquivo.");
-		return;
+		return 0;
 	}
 
 	// Determina tamanho do arquivo
@@ -47,6 +47,8 @@ void leia_arquivo(char* caminho, int tamanho_linha, char linhas[][tamanho_linha]
 	linhas[posicao_linha][0] = 0;
 
 	fclose(ponteiro_arquivo);  // Fecha o ponteiro do arquivo
+
+	return posicao_linha;  // Retorna número de linhas no arquivo
 }
 
 

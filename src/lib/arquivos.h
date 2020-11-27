@@ -10,7 +10,7 @@
 #define ELOGIOS_RECLAMACOES_ARQUIVO "elogios_reclamacoes.txt"
 #define LOGIN_ARQUIVO "login.txt"
 
-void leia_arquivo(char* caminho, int tamanho_linha, char conteudo[][tamanho_linha]);
+int leia_arquivo(char* caminho, int tamanho_linha, char conteudo[][tamanho_linha]);
 
 void leia_linha_csv(char* linha, int tamanho_valor, char valores[][tamanho_valor]);
 
