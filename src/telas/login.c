@@ -18,7 +18,7 @@ bool login() {
 
 	// Lê arquivo de usuários
 	char linhas[100][200];  // Array de linhas
-	leia_arquivo("login.txt", 200, linhas);
+	leia_arquivo(LOGIN_ARQUIVO, 200, linhas);
 
 	// Tenta encontrar usuário e senha
 	char linha[2][100];  // Array de valores em cada linha

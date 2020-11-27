@@ -4,8 +4,6 @@
 #include "../lib/entrada.h"
 #include "../lib/utils.h"
 
-#define CANCELAMENTO_CONSULTA_ARQUIVO "cancelamento_consulta.txt"
-
 
 int cancelamento_consulta() {
 	char nome_paciente[100] = "";
