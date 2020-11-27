@@ -19,6 +19,8 @@ int cadastro_funcionario ()  {
 	char endereco[100] = "";
 	char complemento[100] = "";
 	char cep[100] = "";
+	char usuario[100] = "";
+	char senha[100] = "";
 
 	exibe_titulo("Cadastro de Funcionário");
 
@@ -44,6 +46,16 @@ int cadastro_funcionario ()  {
 		CADASTRO_FUNCIONARIO_ARQUIVO, 13,
 		nome, genero, data_nascimento, estado_civil, cpf, rg, inss, telefone, email,
 		cargo, endereco, complemento, cep
+	);
+
+	// Primeiro cadastr de usuário e senha
+	leia_resposta("Usuário", usuario);
+	leia_resposta("Senha", senha);
+
+	// Insere resultados no arquivo CSV
+	escreve_linha_csv(
+		LOGIN_ARQUIVO, 2,
+		usuario, senha
 	);
 
 	exibe_sucesso("Funcionário cadastrado.");
