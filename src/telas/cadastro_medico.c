@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+#include "../lib/utils.h"
 
 #define CADASTRO_MEDICO_ARQUIVO "cadastro_medico.txt"
 
@@ -18,7 +19,7 @@ int cadastro_medico() {
 	char nascimento[100] = "";
 	char telefone[100] = "";
 
-	puts("Cadastro de Médico");
+	exibe_titulo("Cadastro de Médico");
 
 	// Dados do(a) profissional
 	leia_resposta("Nome", nome_medico);

@@ -3,13 +3,14 @@
 #include <string.h>
 #include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+#include "../lib/utils.h"
 
 
 bool login() {
 	char usuario[100];
 	char senha[100];
 
-	puts("Login");
+	exibe_titulo("Login");
 
 	// Lê dados do usuário
 	leia_resposta("Usuário", usuario);

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+#include "../lib/utils.h"
 #include "./cadastro_paciente.h"
 
 #define AGENDAMENTO_CONSULTA_ARQUIVO "agendamento_consulta.txt"
@@ -15,7 +16,7 @@ int agendamento_consulta() {
 	char hora[100] = "";
 	int ja_possui_cadastro;
 
-	puts("Agendamento de Consulta");
+	exibe_titulo("Agendamento de Consulta");
 
 	// Executa tela de cadastro do paciente, se necessário
 	leia_decisao("Possui cadastro", &ja_possui_cadastro);

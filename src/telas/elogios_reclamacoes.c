@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+#include "../lib/utils.h"
 
 #define ELOGIOS_RECLAMACOES_ARQUIVO "elogios_reclamacoes.txt"
 
@@ -11,6 +12,8 @@ int elogios_reclamacoes() {
 	char nome_medico[100] = "";
 	char elogio_reclamacao[400] = "";
 	int ja_passou_consulta;
+
+	exibe_titulo("Elogios e Reclamações");
 
 	// Lê o nome da pessoa
 	leia_resposta("Nome", nome);

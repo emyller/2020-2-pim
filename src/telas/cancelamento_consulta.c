@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "../lib/arquivos.h"
 #include "../lib/entrada.h"
+#include "../lib/utils.h"
 
 #define CANCELAMENTO_CONSULTA_ARQUIVO "cancelamento_consulta.txt"
 
@@ -12,7 +13,7 @@ int cancelamento_consulta() {
 	char hora[100] = "";
 	int remarcar_consulta;
 
-	puts("Cancelamento de Consulta");
+	exibe_titulo("Cancelamento de Consulta");
 
 	leia_resposta("Nome do paciente", nome_paciente);
 	leia_decisao("Remarcar consulta", &remarcar_consulta);
