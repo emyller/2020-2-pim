@@ -5,14 +5,14 @@
 #include "lib/utils.h"
 
 #include "./programa.h"
-#include "telas/login.h"
-#include "telas/elogios_reclamacoes.h"
-#include "telas/agendamento_consulta.h"
-#include "telas/cancelamento_consulta.h"
-#include "telas/cadastro_medico.h"
-#include "telas/cadastro_funcionario.h"
-#include "telas/cadastro_paciente.h"
-#include "telas/relatorios.h"
+#include "./telas/login.h"
+#include "./telas/elogios_reclamacoes.h"
+#include "./telas/agendamento_consulta.h"
+#include "./telas/cancelamento_consulta.h"
+#include "./telas/cadastro_medico.h"
+#include "./telas/cadastro_funcionario.h"
+#include "./telas/cadastro_paciente.h"
+#include "./telas/relatorios.h"
 
 
 int main() {
