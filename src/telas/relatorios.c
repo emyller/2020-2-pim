@@ -65,3 +65,33 @@ void relatorio_agendamento_consulta() {
 
 	exibe_sucesso("Relatório exibido.");
 }
+
+
+void relatorio_elogios_reclamacoes() {
+	/*
+	Exibe elogios e reclamações
+	*/
+	const size_t MAX_LINHAS = 100;
+
+	exibe_titulo("Relatório: Elogios e Reclamações");
+
+	// Lê arquivo de elogios e reclamações
+	char linhas[MAX_LINHAS][500];
+	int numero_linhas = leia_arquivo(ELOGIOS_RECLAMACOES_ARQUIVO, 500, linhas);
+
+	// Exibe elogios e reclamações
+	char linha[4][100];
+	puts("Nome\tUnidade Agendamento\tNome médico\tElogios e Reclamações");
+	for (int i = 0; i < numero_linhas; i++) {
+		leia_linha_csv(linhas[i], 100, linha);
+		printf(
+			"%s\t%s\t%s\t%s\n",
+			linha[0],
+			linha[1],
+			linha[2],
+			linha[3]
+		);
+	}
+
+	exibe_sucesso("Relatório exibido.");
+}
