@@ -29,6 +29,7 @@ void menu() {
 	puts("7. Cadastro de paciente");
 	puts("8. Relatório: Agendamentos de Consulta");
 	puts("9. Relatório: Pacientes Cadastrados");
+	puts("10. Relatório: Elogios e Reclamações");
 	leia_digito("Insira opção: ", &opcao);
 
 	switch (opcao) {
@@ -55,6 +56,10 @@ void menu() {
 			break;
 		case 9:
 			relatorio_pacientes_cadastrados();
+			break;
+		case 10:
+			relatorio_elogios_reclamacoes();
+			break;
 		default:
 			puts("Opção inválida. Tente novamente.");
 	}
