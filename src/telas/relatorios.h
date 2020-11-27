@@ -5,4 +5,6 @@ void relatorio_agendamento_consulta();
 
 void relatorio_pacientes_cadastrados();
 
+void relatorio_elogios_reclamacoes();
+
 #endif
