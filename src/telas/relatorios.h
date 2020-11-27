@@ -3,4 +3,6 @@
 
 void relatorio_agendamento_consulta();
 
+void relatorio_pacientes_cadastrados();
+
 #endif
