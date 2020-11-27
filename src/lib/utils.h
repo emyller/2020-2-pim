@@ -7,4 +7,6 @@ void exibe_sucesso(char* mensagem);
 
 void exibe_erro(char* mensagem);
 
+void espera_enter();
+
 #endif
