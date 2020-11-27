@@ -9,4 +9,6 @@ void relatorio_elogios_reclamacoes();
 
 void relatorio_totais_diarios();
 
+void relatorio_cancelamento_consulta();
+
 #endif

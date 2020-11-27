@@ -31,6 +31,7 @@ void menu() {
 	puts("9. Relatório: Pacientes Cadastrados");
 	puts("10. Relatório: Elogios e Reclamações");
 	puts("11. Relatório: Totais Diários");
+	puts("12. Relatório: Cancelamento de Consultas");
 	leia_digito("Insira opção: ", &opcao);
 
 	switch (opcao) {
@@ -63,6 +64,9 @@ void menu() {
 			break;
 		case 11:
 			relatorio_totais_diarios();
+			break;
+		case 12:
+			relatorio_cancelamento_consulta();
 			break;
 		default:
 			puts("Opção inválida. Tente novamente.");

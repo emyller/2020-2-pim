@@ -172,3 +172,32 @@ void relatorio_totais_diarios() {
 
 	exibe_sucesso("Relatório exibido.");
 }
+
+
+void relatorio_cancelamento_consulta() {
+	/*
+	Exibe cancelamento de consultas
+	*/
+	const size_t MAX_LINHAS = 100;
+
+	exibe_titulo("Relatório: Cancelamento de Consultas");
+
+	// Lê arquivo de cancelamento de consulta
+	char linhas[MAX_LINHAS][500];
+	int numero_linhas = leia_arquivo(CANCELAMENTO_CONSULTA_ARQUIVO, 500, linhas);
+
+	// Exibe os cancelamento de consulta
+	char linha[3][100];
+	puts("Nome\tData\tHora");
+	for (int i = 0; i < numero_linhas; i++) {
+		leia_linha_csv(linhas[i], 100, linha);
+		printf(
+			"%s\t%s\t%s\n",
+			linha[0],
+			linha[1],
+			linha[2]
+		);
+	}
+
+	exibe_sucesso("Relatório exibido.");
+}
