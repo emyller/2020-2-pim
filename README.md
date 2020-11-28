@@ -15,3 +15,12 @@ basta chamá-lo diretamente:
 ```sh
 $ build/programa
 ```
+
+
+## Primeiro acesso
+
+O sistema permite acesso de um usuário padrão, caso nenhum usuário esteja
+cadastrado, para manutenção inicial. Os dados são:
+
+- Usuário: `admin`
+- Senha: `admin`

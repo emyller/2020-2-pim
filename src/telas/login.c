@@ -20,6 +20,12 @@ bool login() {
 	char linhas[100][200];  // Array de linhas
 	int numero_linhas = leia_arquivo(LOGIN_ARQUIVO, 200, linhas);
 
+	// Usuário padrão
+	if (numero_linhas == 0 && strcmp(usuario, "admin") == 0 && strcmp(senha, "admin") == 0) {
+		exibe_sucesso("Usuário ADMINISTRADOR.");
+		return true;
+	}
+
 	// Tenta encontrar usuário e senha
 	char linha[2][100];  // Array de valores em cada linha
 	for (int i = 0; i < numero_linhas; i++) {
