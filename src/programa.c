@@ -18,7 +18,7 @@
 
 int main() {
 	puts(COR_VERDE "Bem vindo ao programa" COR_NORMAL);
-	puts("Versão 0.0.1");
+	puts("Versão 1.0.0");
 
 	// Obriga login antes de continuar
 	bool logado = false;
