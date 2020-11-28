@@ -5,14 +5,15 @@
 #include "lib/utils.h"
 
 #include "./programa.h"
-#include "telas/login.h"
-#include "telas/elogios_reclamacoes.h"
-#include "telas/agendamento_consulta.h"
-#include "telas/cancelamento_consulta.h"
-#include "telas/cadastro_medico.h"
-#include "telas/cadastro_funcionario.h"
-#include "telas/cadastro_paciente.h"
-#include "telas/relatorios.h"
+#include "./telas/login.h"
+#include "./telas/elogios_reclamacoes.h"
+#include "./telas/agendamento_consulta.h"
+#include "./telas/cancelamento_consulta.h"
+#include "./telas/cadastro_medico.h"
+#include "./telas/cadastro_funcionario.h"
+#include "./telas/cadastro_paciente.h"
+#include "./telas/relatorios.h"
+#include "./telas/sincronizacao.h"
 
 
 int main() {
@@ -43,6 +44,7 @@ bool menu_principal() {
 	puts("1. Consultas");
 	puts("2. Recursos Humanos");
 	puts("3. Relatórios");
+	puts("4. Sincronização");
 
 	// Ativa opção
 	leia_digito("Opção", &opcao);
@@ -58,6 +60,9 @@ bool menu_principal() {
 			break;
 		case 3:
 			menu_relatorios();
+			break;
+		case 4:
+			sincroniza_arquivos();
 			break;
 		default:
 			exibe_erro("Opção inválida.");
